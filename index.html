@@ -18,7 +18,72 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
 <!-- El título que aparece en la pestaña del navegador y en Google -->
-<title>Maquinados CNC en León, Gto | Precisión Industrial | Longoria Tooling</title>
+<title>Maquinados CNC y Corte Láser Industrial en León | Estándares ISO 9001 | Longoria Tooling</title>
+
+<!-- ── SEO BÁSICO ─────────────────────────────────────────────────────────── -->
+
+<!-- Descripción que Google muestra debajo del título en los resultados de búsqueda.
+     Ideal entre 150-160 caracteres. -->
+<meta name="description" content="Maquinados CNC y Corte láser industrial de metales en León, Gto. Procesos alineados a estándares ISO 9001. Cotización en menos de 24h y entregas en 8 días hábiles para el Bajío."/>
+
+<!-- Le dice a Google que sí puede indexar esta página y seguir sus enlaces -->
+<meta name="robots" content="index, follow"/>
+
+<!-- URL oficial de la página (evita que Google cuente versiones duplicadas como error) -->
+<link rel="canonical" href="https://www.longoria-tooling.com/"/>
+
+<!-- ── OPEN GRAPH (cómo se ve al compartir en WhatsApp, Facebook, LinkedIn) ── -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="es_MX"/>
+<meta property="og:url" content="https://www.longoria-tooling.com/"/>
+<meta property="og:title" content="Maquinados CNC y Corte Láser Industrial en León | Longoria Tooling"/>
+<meta property="og:description" content="Precisión industrial bajo estándares ISO 9001. Cotización en 24h. Especialistas en herramentales y MRO para la industria del Bajío."/>
+<!-- Imagen que aparece al compartir el link (reemplaza con la URL real de tu imagen) -->
+<meta property="og:image" content="https://www.longoria-tooling.com/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<!-- ── TWITTER / X CARD ───────────────────────────────────────────────────── -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Maquinados CNC y Corte Láser en León | Longoria Tooling"/>
+<meta name="twitter:description" content="Manufactura de precisión con tiempos de entrega récord (8 días) y estándares ISO 9001 en Guanajuato."/>
+<meta name="twitter:image" content="https://www.longoria-tooling.com/og-image.jpg"/>
+
+<!-- ── DATOS ESTRUCTURADOS (JSON-LD) ─────────────────────────────────────── -->
+<!-- Esto le dice a Google exactamente qué tipo de negocio es, dónde está y cómo contactarlo.
+     Puede generar un "rich result" (ficha especial) en los resultados de búsqueda. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ManufacturingBusiness",
+  "name": "Longoria Tooling",
+  "description": "Planta de manufactura especializada en maquinados CNC de precisión y corte láser industrial para metales. Operando bajo estándares de calidad ISO 9001 para la industria del Bajío.",
+  "url": "https://www.longoria-tooling.com",
+  "telephone": "+52-477-000-0000",
+  "email": "ventas@longoria-tooling.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Tu Dirección Real]",
+    "addressLocality": "León",
+    "addressRegion": "Guanajuato",
+    "postalCode": "[Código Postal]",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "21.1221",
+    "longitude": "-101.6824"
+  },
+  "areaServed": ["León", "Silao", "Irapuato", "Salamanca", "Celaya", "Querétaro"],
+  "knowsAbout": [
+    "Maquinado de precisión CNC",
+    "Corte láser de metal",
+    "Manufactura de herramentales",
+    "MRO Industrial",
+    "Estándares ISO 9001"
+  ]
+}
+</script>
 
 <!-- Carga Tailwind CSS: una biblioteca que nos da clases de estilos ya hechas
      para no tener que escribir todo el diseño desde cero -->
@@ -35,6 +100,13 @@
         /* Configuración de los íconos: grosor y tamaño normal */
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Texto de las tarjetas — cambia font-size aquí para afectar todas a la vez */
+        .card-text {
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 500;
         }
 
         /* Patrón de puntos grises que se usa de fondo en la sección de calidad */
@@ -167,13 +239,13 @@
   <div class="flex justify-between items-center px-margin py-sm w-full max-w-[1280px] mx-auto">
 
     <!-- Logo / Nombre de la empresa -->
-    <div class="text-headline-md font-headline-md font-bold tracking-tighter text-primary">LEÓN PRECISION CNC</div>
+    <div class="text-headline-md font-headline-md font-bold tracking-tighter text-primary">Longoria Tooling</div>
 
     <!-- Menú de navegación — solo visible en pantallas medianas y grandes ("hidden md:flex") -->
     <nav class="hidden md:flex items-center gap-lg">
       <!-- Cada <a> es un enlace que lleva a una sección de la misma página (el # apunta al id de esa sección) -->
-      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#services">Services</a>
-      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#tooling">Tooling</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#services">Servicios</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#tooling">Especialidades</a>
       <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#quality">Quality</a>
       <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#about">About</a>
     </nav>
@@ -212,7 +284,7 @@
            así el texto del lado izquierdo es legible sobre la imagen -->
       <div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
       <!-- Imagen de una máquina CNC de 5 ejes -->
-      <img class="w-full h-full object-cover" data-alt="A high-precision 5-axis CNC machining center cutting a complex aluminum component." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGuFuTNOkRijKTwM_MI2VfXqPJ8HcBRqAvIop3wn6lHxBai4BIDB3YrMRRgYlnwjx_8MnnL_12Z-c8i4OcMqPrgG8uMqvR0e0EqLsiWypwtOHN9DSP_S6OwaK7fcwzciHaVpCI3Ep4UhjE0y0lkF-6jm__yuWYu2Owz_wg80Gfi6JGcJsO7r0fPk-rdeIXpnn0Vikj_hOvysVGSHw6XnLqoBeTKCb1OJgHVZLNr2QIXTfahKCSYRZCFqRoDtI0fdBRMFl81jjKcIEm"/>
+      <img class="w-full h-full object-cover" data-alt="A high-precision 5-axis CNC machining center cutting a complex aluminum component." src="Trabajando.jpg"/>
     </div>
 
     <!-- Contenido del hero: título, descripción y botones (por encima de la imagen) -->
@@ -222,7 +294,7 @@
         <!-- Etiqueta pequeña de localización -->
         <div class="inline-flex items-center gap-sm bg-primary-fixed px-sm py-1 border border-primary text-on-primary-fixed">
           <span class="w-2 h-2 bg-primary-container"></span>
-          <span class="text-label-bold font-label-bold uppercase tracking-wider">Bajío Industrial Hub</span>
+          <span class="text-label-bold font-label-bold uppercase tracking-wider">Atendemos todo el Bajío</span>
         </div>
 
         <!-- Título principal (H1 — el más importante de la página para Google) -->
@@ -231,14 +303,14 @@
                 </h1>
 
         <!-- Subtítulo descriptivo -->
-        <p class="text-body-lg font-body-lg text-on-surface-variant max-w-lg">
+        <p class="text-body-lg font-body-lg font-medium text-on-surface-variant max-w-lg">
                     Cotizamos en menos de 24 horas. Entregas en 8 días hábiles. Resolvemos tus urgencias de MRO y Herramentales con precisión milimétrica.
                 </p>
 
         <!-- Dos botones de llamada a la acción -->
         <div class="flex flex-col sm:flex-row gap-md">
           <!-- Botón principal (más prominente) -->
-          <button class="bg-primary-container text-on-primary font-label-bold text-label-bold px-xl py-md border border-primary-container active:scale-95 transition-transform duration-150 shadow-lg">
+          <button class="bg-primary-container text-on-primary font-bold text-base px-xl py-md border border-primary-container active:scale-95 transition-transform duration-150 shadow-lg">
                         Solicitar Cotización Ahora
                     </button>
           <!-- Botón secundario (menos prominente, fondo transparente) -->
@@ -256,13 +328,13 @@
           <!-- Línea divisora vertical -->
           <div class="w-px h-10 bg-outline-variant"></div>
           <div class="flex flex-col">
-            <span class="text-headline-md font-headline-md text-on-surface">ISO</span>
-            <span class="text-label-mono font-label-mono text-on-surface-variant">9001:2015</span>
+            <span class="text-headline-md font-headline-md text-on-surface">&lt;24h</span>
+            <span class="text-label-mono font-label-mono text-on-surface-variant">COTIZACIÓN</span>
           </div>
           <div class="w-px h-10 bg-outline-variant"></div>
           <div class="flex flex-col">
-            <span class="text-headline-md font-headline-md text-on-surface">&lt;24h</span>
-            <span class="text-label-mono font-label-mono text-on-surface-variant">COTIZACIÓN</span>
+            <span class="text-headline-md font-headline-md text-on-surface">&lt;8 DÍAS</span>
+            <span class="text-label-mono font-label-mono text-on-surface-variant">PROMEDIO DE ENTREGA</span>
           </div>
         </div>
 
@@ -330,52 +402,52 @@
         <!-- Servicio 1: CNC Vertical — tarjeta con imagen de fondo -->
         <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
           <!-- "group-hover:opacity-80" = la imagen se aclara un poco al pasar el cursor -->
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="CNC Machining" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXRihbK_bzJQQjNtYaQEkAmqXA5s2wc-TJFdg8AhjvfUad59feyRsDaHamQou_y_Rjteq6XSSy0fq2H00hISMgPq2wsKhUZcTZfM6KR1bMJJRRcEOpaGcom4FFDpuREYgZRLJ12N5GD-nditScZKkyGmeDTN1K7m2jRF5TT4xQQZ6rCuickB_TSfAtnDBwwlWXcH4VZ2xDwnTkagKsjB3j6PxznCCsC44fCeyFEiw4YBPDaAg9q3zZW4LKcGr0aWD98VRyS-qpoDep"/>
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="CNC Vertical" src="CNC%20Vertical.jpg"/>
           <!-- Texto sobre la imagen, en la parte inferior con degradado para legibilidad -->
           <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
             <h4 class="text-headline-md font-headline-md mb-xs">CNC Vertical</h4>
-            <p class="text-body-sm text-on-surface-variant">Centro de maquinado de 3 y 4 ejes.</p>
+            <p class="card-text text-on-surface-variant">Centro de maquinado de 3 y 4 ejes.</p>
           </div>
         </div>
 
         <!-- Servicio 2: Torneado -->
         <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Turning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6_BnFeXFC55vO13nn-YU7S8vMzjLPXEMlBSWAOxD54gVaSaXaYEHgfDlzgvApAqMbnvrYvZ_r2Li44TtnYFgH9aT_62msNVAzafVVVVZvVSkeQL6X8Rl7_86PJ3VS9Ig4JULGb5jfiTJ8TzeSVzw2IIvLiSKww0FEwe0gsmJ3OVJ1bJWXmCTplP0gNp2KB-N_4CI3RaNAZgGZ7KiYYqSVGcJyu34iD4cCYgrt2Wg9U9PirCMFA6_7zskrgD85S1pwhbNrVCOMqiYI"/>
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Torneado" src="Torno.jpg"/>
           <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
             <h4 class="text-headline-md font-headline-md mb-xs">Torneado</h4>
-            <p class="text-body-sm text-on-surface-variant">Precisión cilíndrica y roscados complejos.</p>
+            <p class="card-text text-on-surface-variant">Precisión cilíndrica y roscados complejos.</p>
           </div>
         </div>
 
         <!-- Servicio 3: Corte Láser -->
         <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Laser Cutting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo7I3jcthSYvMQypWX7QNeBsbdCMFNykSVEqFub8L6BPoLCHMJcnPIdWChYZ8PEPVTA3m-ZDwSyQ0itTAw8Hds15tMDm2j_KQa4Y_pKSf_WwNCqWxfz2stQ7VL0NNPM_zFT8As1KybvXH_hOCY4t46N8sCpSO7nZRy4EVzs_dOJAPIyBjq-V9mSEAYs39i15e5rL-aGkZVN_sGT71_EnfsUIhn7Jrb22nGPxbTso7N4MQTRJPjgmd1Cj1eyfSnwoaYEhjR4XxxBqoL"/>
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Corte Láser" src="Laser.jpg"/>
           <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
             <h4 class="text-headline-md font-headline-md mb-xs">Corte Láser</h4>
-            <p class="text-body-sm text-on-surface-variant">Formatos de alta precisión y acabados limpios.</p>
+            <p class="card-text text-on-surface-variant">Formatos de alta precisión y acabados limpios.</p>
           </div>
         </div>
 
         <!-- Servicio 4: Erosionado por Hilo (Wire EDM) -->
         <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Wire EDM" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv7O7--Rgv4CaXZBEMeThLzpJ3zXd804VmifCg9GhlNjs96vPzj6CulmeTtJBv9D45JTe-HByiQMT__ffe2jbPnVr2E-mEIJPrnAoyigZxHnt4mnaMng3sMHUT66lcjq_LRjqL0zLN-nmlZvyJ6JZRWIHdD9uBnwwxjwbPRdub4dSttSDnsjP1epQk7l8NACb3KhPqb9CDwimAxqo16SLjTfxueQjGVduswhP7-6Mhb3lLor1EjAdyPQKjldb0ollaEPAhlrdVNwpK"/>
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Erosionado por Hilo" src="Erosionado.png"/>
           <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
             <h4 class="text-headline-md font-headline-md mb-xs">Erosionado por Hilo</h4>
-            <p class="text-body-sm text-on-surface-variant">Cortes geométricos complejos en metales duros.</p>
+            <p class="card-text text-on-surface-variant">Cortes geométricos complejos en metales duros.</p>
           </div>
         </div>
 
         <!-- Servicio 5: Fresado Convencional -->
         <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Milling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1cT1StNOehgrfGFtrbaTioyPRr3NJvHSm1rTbYpOJjNdVcTHtatDb34JdEzrtXod-eTWGfzU7tHlwcChnf1GXhfRFwr99_ocyzFn-cNycdxiZecDGB_1eqNIVmi1omQMUUi91mq2DLWqNINdWGPpi0-5wRY0IZyTu-NJsqeDKA7TUvblXauF_JVB1JiqH1jqlA030PgxRS0YMrS8B4wXP4J6almfC4k61G5XwtdzziT4guH5nePfZxVfj3WHAEVxNEsZo4rj0Dbm8"/>
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Fresado Convencional" src="Fresado.png"/>
           <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
             <h4 class="text-headline-md font-headline-md mb-xs">Fresado Convencional</h4>
-            <p class="text-body-sm text-on-surface-variant">Soluciones rápidas para piezas auxiliares.</p>
+            <p class="card-text text-on-surface-variant">Soluciones rápidas para piezas auxiliares.</p>
           </div>
         </div>
 
         <!-- Servicio 6: Tarjeta especial para proyectos personalizados (sin imagen, fondo de color) -->
-        <div class="bg-primary-container border border-primary-container aspect-video flex flex-col items-center justify-center p-lg text-center gap-sm">
+        <div class="bg-primary-container border border-primary-container aspect-video overflow-hidden flex flex-col items-center justify-center p-lg text-center gap-sm">
           <span class="material-symbols-outlined text-on-primary text-4xl" data-icon="settings_suggest">settings_suggest</span>
           <h4 class="text-headline-md font-headline-md text-on-primary">¿Proyecto Especial?</h4>
           <p class="text-body-sm text-on-primary/80 mb-md">Contamos con ingeniería para diseño y fabricación a medida.</p>
@@ -475,7 +547,7 @@
             <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="check_circle">check_circle</span>
             <div>
               <h6 class="font-bold">Reportes Dimensionales</h6>
-              <p class="text-body-sm text-on-surface-variant">Documentación técnica incluida en cada entrega crítica.</p>
+              <p class="card-text text-on-surface-variant">Documentación técnica incluida en cada entrega crítica.</p>
             </div>
           </li>
 
@@ -484,7 +556,7 @@
             <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="architecture">architecture</span>
             <div>
               <h6 class="font-bold">Laboratorio de Metrología</h6>
-              <p class="text-body-sm text-on-surface-variant">CMM y equipos de medición certificados.</p>
+              <p class="card-text text-on-surface-variant">CMM y equipos de medición certificados.</p>
             </div>
           </li>
 
@@ -493,7 +565,7 @@
             <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="factory">factory</span>
             <div>
               <h6 class="font-bold">Gestión de Cumplimiento</h6>
-              <p class="text-body-sm text-on-surface-variant">Alineados a los estándares de la industria automotriz y aeroespacial del Bajío.</p>
+              <p class="card-text text-on-surface-variant">Alineados a los estándares de la industria automotriz y aeroespacial del Bajío.</p>
             </div>
           </li>
 
@@ -505,7 +577,7 @@
         <!-- Borde decorativo detrás de la imagen -->
         <div class="absolute -inset-4 bg-primary-container/5 border border-primary-container/10"></div>
         <!-- Imagen del laboratorio de metrología -->
-        <img class="relative z-10 w-full border border-outline-variant shadow-xl" data-alt="Metrology Lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2xZTAlu9L6-gW4QTvxRAMo279nV9Y4OPhf48g0dYcwp402VkOCaXoWR7-OOnjezVn2ZGTMRsEVLQmreBiRvtC8jAOuQvzK7yuXDW6F4Zr5z1AwzGyEHiU_8GBIZRxrqHGn34z6decKAhKzIxPjI5-Oit5hfJFhTGvaYx1fKHmE0iCkmWLNj5OspfRkaeaJGFz-Bw1RV73yuvoxop78oDk9vRSONhN7aLLzyS7-rXvskVNEyCEL0dJcpzxsvd-lzJ5VF6AZGAH7i"/>
+        <img class="relative z-10 w-full border border-outline-variant shadow-xl" data-alt="Metrology Lab" src="Cultura.jpg"/>
       </div>
 
     </div>
@@ -527,9 +599,13 @@
           <!-- Datos de contacto con íconos -->
           <div class="space-y-sm pt-md text-on-primary">
             <div class="flex items-center gap-sm">
-              <span class="material-symbols-outlined" data-icon="mail">mail</span>
-              <span>ventas@leonprecision.com</span>
+              <span class="material-symbols-outlined" data-icon="call">call</span>
+              <a href="tel:+524772172542">477 217 2542</a>
             </div>
+            <div class="flex items-center gap-sm">
+              <span class="material-symbols-outlined" data-icon="mail">mail</span>
+              <a href="mailto:ventas@longoriatm.com.mx">ventas@longoriatm.com.mx</a>
+            </div>            
             <div class="flex items-center gap-sm">
               <span class="material-symbols-outlined" data-icon="location_on">location_on</span>
               <span>León, Guanajuato, México</span>
