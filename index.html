@@ -1,64 +1,681 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Page</title>
-  <link rel="stylesheet" href="styles.css" />
+<!-- DOCTYPE le dice al navegador que este es un archivo HTML moderno -->
+
+<!-- La etiqueta <html> es el contenedor de toda la página. "lang=es" indica que el idioma es español.
+     La clase "light" activa el tema claro de colores. -->
+<html class="light" lang="es"><head>
+
+<!-- ============================================================
+     CABECERA DEL DOCUMENTO (no es visible en la página)
+     Aquí se configuran cosas técnicas que el navegador necesita
+     antes de mostrar la página al usuario.
+     ============================================================ -->
+
+<!-- Le dice al navegador qué tipo de caracteres usar (UTF-8 permite acentos y ñ) -->
+<meta charset="utf-8"/>
+
+<!-- Hace que la página se vea bien en celulares ajustando el tamaño automáticamente -->
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<!-- El título que aparece en la pestaña del navegador y en Google -->
+<title>Maquinados CNC en León, Gto | Precisión Industrial | Longoria Tooling</title>
+
+<!-- Carga Tailwind CSS: una biblioteca que nos da clases de estilos ya hechas
+     para no tener que escribir todo el diseño desde cero -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- Carga la fuente tipográfica "IBM Plex Sans" desde Google Fonts (la letra que se ve en la página) -->
+<!-- ital,wght@0,... = versión normal | 1,... = versión itálica | cada número es un peso (400=regular, 500=medium, 600=semibold, 700=bold) -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+
+<!-- Carga los iconos de Material Symbols (los íconos de Google como el teléfono, reloj, etc.) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<style>
+        /* Configuración de los íconos: grosor y tamaño normal */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Patrón de puntos grises que se usa de fondo en la sección de calidad */
+        .bg-grid-pattern {
+            background-image: radial-gradient(circle, #c4c6cc 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+
+<!-- ============================================================
+     CONFIGURACIÓN DE COLORES Y TAMAÑOS
+     Aquí se definen todos los colores de la marca y los tamaños
+     de texto que se usan en toda la página.
+     ============================================================ -->
+<script id="tailwind-config">
+      tailwind.config = {
+        /* "darkMode: class" significa que el modo oscuro se activa poniendo una clase en el HTML */
+        darkMode: "class",
+        theme: {
+          extend: {
+            /* PALETA DE COLORES — cada nombre es un color que se usa en la página */
+            "colors": {
+                    "on-primary-fixed": "#0c1d2b",        /* texto sobre fondo azul claro fijo */
+                    "surface-variant": "#e0e3e5",          /* superficie alternativa gris claro */
+                    "inverse-primary": "#b8c8dc",          /* primario invertido (para fondos oscuros) */
+                    "surface-container-low": "#f2f4f6",    /* contenedor con fondo muy claro */
+                    "secondary": "#545f72",                /* color secundario, gris azulado */
+                    "on-primary": "#ffffff",               /* texto blanco que va sobre el color primario */
+                    "primary-fixed": "#d3e4f8",            /* versión fija del color primario (azul muy claro) */
+                    "on-error": "#ffffff",                 /* texto blanco sobre color de error */
+                    "tertiary-fixed-dim": "#b6c4ff",       /* terciario fijo más oscuro */
+                    "tertiary-container": "#002171",       /* contenedor del color terciario (azul marino) */
+                    "on-primary-fixed-variant": "#384858", /* texto sobre variante fija primaria */
+                    "on-tertiary-fixed-variant": "#0039b3",/* texto sobre variante terciaria fija */
+                    "secondary-container": "#d5e0f7",      /* contenedor del color secundario */
+                    "surface-container-highest": "#e0e3e5",/* contenedor más oscuro de superficie */
+                    "on-tertiary-container": "#1B2B3A",    /* texto sobre contenedor terciario */
+                    "surface-bright": "#f7f9fb",           /* superficie brillante/clara */
+                    "on-secondary-fixed-variant": "#3c475a",/* texto sobre variante secundaria fija */
+                    "outline": "#74777c",                  /* color de bordes y líneas */
+                    "on-background": "#191c1e",            /* texto sobre fondo principal */
+                    "secondary-fixed-dim": "#bcc7dd",      /* secundario fijo más tenue */
+                    "on-error-container": "#93000a",       /* texto oscuro sobre contenedor de error */
+                    "tertiary": "#001042",                 /* color terciario (azul muy oscuro) */
+                    "secondary-fixed": "#d8e3fa",          /* secundario fijo */
+                    "outline-variant": "#c4c6cc",          /* bordes más sutiles */
+                    "primary-fixed-dim": "#b8c8dc",        /* primario fijo más tenue */
+                    "error": "#ba1a1a",                    /* color rojo para errores */
+                    "surface-container": "#eceef0",        /* fondo de tarjetas/contenedores */
+                    "surface": "#f7f9fb",                  /* color de superficie principal */
+                    "inverse-on-surface": "#eff1f3",       /* texto sobre superficie invertida */
+                    "error-container": "#ffdad6",          /* fondo para mensajes de error */
+                    "on-secondary-container": "#586377",   /* texto sobre contenedor secundario */
+                    "inverse-surface": "#2d3133",          /* superficie invertida (modo oscuro) */
+                    "on-surface-variant": "#43474c",       /* texto secundario sobre superficie */
+                    "on-primary-container": "#8292a5",     /* texto sobre contenedor primario */
+                    "tertiary-fixed": "#dce1ff",           /* terciario fijo (lila claro) */
+                    "background": "#f7f9fb",               /* color de fondo general de la página */
+                    "surface-container-lowest": "#ffffff", /* blanco puro — el más claro */
+                    "surface-container-high": "#e6e8ea",   /* contenedor algo más oscuro */
+                    "surface-tint": "#506071",             /* tinte sobre superficies */
+                    "on-tertiary": "#ffffff",              /* texto blanco sobre terciario */
+                    "on-secondary": "#ffffff",             /* texto blanco sobre secundario */
+                    "on-surface": "#191c1e",               /* texto principal oscuro */
+                    "primary-container": "#1b2b3a",        /* contenedor azul marino oscuro (color de marca) */
+                    "surface-dim": "#d8dadc",              /* superficie atenuada */
+                    "on-secondary-fixed": "#111c2c",       /* texto oscuro sobre secundario fijo */
+                    "on-tertiary-fixed": "#001551",        /* texto sobre terciario fijo */
+                    "primary": "#051625"                   /* color primario principal (azul casi negro) */
+            },
+            /* BORDES REDONDEADOS — qué tan redondas son las esquinas de los elementos */
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",  /* borde predeterminado: muy poco redondeado */
+                    "lg": "0.25rem",        /* grande: un poco más redondeado */
+                    "xl": "0.5rem",         /* extra grande */
+                    "full": "0.75rem"       /* completamente redondeado */
+            },
+            /* ESPACIADOS — distancias entre elementos */
+            "spacing": {
+                    "sm": "8px",       /* pequeño: 8 píxeles */
+                    "xs": "4px",       /* extra pequeño: 4 píxeles */
+                    "gutter": "24px",  /* espacio entre columnas */
+                    "md": "16px",      /* mediano: 16 píxeles */
+                    "lg": "24px",      /* grande: 24 píxeles */
+                    "unit": "4px",     /* unidad base */
+                    "xl": "40px",      /* extra grande: 40 píxeles */
+                    "margin": "32px"   /* margen lateral de la página */
+            },
+            /* TIPOGRAFÍA — familias de fuentes por tipo de texto */
+            "fontFamily": {
+                    "headline-md": ["IBM Plex Sans"],   /* titular mediano — fuente monoespaciada */
+                    "body-sm": ["IBM Plex Sans"],       /* cuerpo de texto pequeño — fuente sans */
+                    "label-bold": ["IBM Plex Sans"],    /* etiqueta en negritas — fuente monoespaciada */
+                    "headline-xl": ["IBM Plex Sans"],   /* titular extra grande — fuente monoespaciada */
+                    "body-md": ["IBM Plex Sans"],       /* cuerpo de texto mediano — fuente sans */
+                    "body-lg": ["IBM Plex Sans"],       /* cuerpo de texto grande — fuente sans */
+                    "headline-lg": ["IBM Plex Sans"],   /* titular grande — fuente monoespaciada */
+                    "label-mono": ["IBM Plex Sans"]     /* etiqueta monoespaciada — fuente monoespaciada */
+            },
+            /* TAMAÑOS DE TEXTO — tamaño, altura de línea y peso de cada tipo */
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-mono": ["13px", {"lineHeight": "1", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
 </head>
-<body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="container">
-      <div class="nav-logo">Logo</div>
+<!-- ============================================================
+     CUERPO DE LA PÁGINA — todo lo que el usuario puede ver
+     "bg-background" = color de fondo, "text-on-surface" = color del texto principal
+     "overflow-x-hidden" = evita que aparezca barra de desplazamiento horizontal
+     ============================================================ -->
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 
-      <div class="nav-phone">
-        <div class="nav-phone-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
-          </svg>
-        </div>
-        <span>333-333-3333</span>
-      </div>
+<!-- ============================================================
+     BARRA DE NAVEGACIÓN SUPERIOR (TopAppBar)
+     Se queda fija en la parte de arriba aunque el usuario haga scroll.
+     "sticky z-50" = pegada arriba con prioridad visual alta
+     ============================================================ -->
+<header class="bg-surface-container-lowest border-b border-outline-variant docked full-width top-0 sticky z-50 transition-all duration-200">
+  <div class="flex justify-between items-center px-margin py-sm w-full max-w-[1280px] mx-auto">
 
-      <a href="#" class="btn-primary">CTA Button</a>
+    <!-- Logo / Nombre de la empresa -->
+    <div class="text-headline-md font-headline-md font-bold tracking-tighter text-primary">LEÓN PRECISION CNC</div>
+
+    <!-- Menú de navegación — solo visible en pantallas medianas y grandes ("hidden md:flex") -->
+    <nav class="hidden md:flex items-center gap-lg">
+      <!-- Cada <a> es un enlace que lleva a una sección de la misma página (el # apunta al id de esa sección) -->
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#services">Services</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#tooling">Tooling</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#quality">Quality</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#about">About</a>
+    </nav>
+
+    <!-- Botones de acción en el lado derecho del menú -->
+    <div class="flex items-center gap-md">
+      <!-- Ícono de teléfono — al hacer clic intenta llamar al número indicado -->
+      <a class="hover:bg-surface-container-highest transition-all duration-200 p-2 rounded-full" href="tel:+1234567890">
+        <span class="material-symbols-outlined text-primary-container" data-icon="call">call</span>
+      </a>
+      <!-- Botón "Request Quote" — solo visible en pantallas medianas y grandes -->
+      <button class="hidden md:block bg-primary-container text-on-primary px-lg py-xs font-label-bold text-label-bold active:scale-95 transition-transform duration-150 rounded">
+                Request Quote
+            </button>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
+  </div>
+</header>
 
-      <div class="hero-left">
-        <p class="social-proof-label">Social Proof #1</p>
-        <h1 class="hero-headline">Dream outcome and<br />'what's in it for me'</h1>
-        <p class="hero-sub">
-          "Stop doing X" | "No more Y" | "Pain Point". Our solution does X, Y, Z
-          (articulate main benefit you provide &amp; explain how you do what you
-          mentioned in the headline in a proprietary or unique way).
-        </p>
-        <div class="hero-cta-group">
-          <a href="#" class="btn-primary">Main Action to Take</a>
-          <div class="fud-box">Reduce Friction and FUDs (Fear, Uncertainty, Doubts)</div>
+<!-- ============================================================
+     CONTENIDO PRINCIPAL DE LA PÁGINA
+     Todo el contenido visible entre el menú y el pie de página
+     ============================================================ -->
+<main>
+
+  <!-- ============================================================
+       SECCIÓN HERO (Banner principal)
+       Es la primera sección grande que el usuario ve al entrar.
+       Tiene una imagen de fondo, un título, descripción y botones.
+       ============================================================ -->
+  <section class="relative min-h-[700px] flex items-center overflow-hidden border-b border-outline-variant">
+
+    <!-- Imagen de fondo con degradado encima para que el texto sea legible -->
+    <div class="absolute inset-0 z-0">
+      <!-- Degradado: va de opaco a la izquierda a transparente a la derecha,
+           así el texto del lado izquierdo es legible sobre la imagen -->
+      <div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+      <!-- Imagen de una máquina CNC de 5 ejes -->
+      <img class="w-full h-full object-cover" data-alt="A high-precision 5-axis CNC machining center cutting a complex aluminum component." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGuFuTNOkRijKTwM_MI2VfXqPJ8HcBRqAvIop3wn6lHxBai4BIDB3YrMRRgYlnwjx_8MnnL_12Z-c8i4OcMqPrgG8uMqvR0e0EqLsiWypwtOHN9DSP_S6OwaK7fcwzciHaVpCI3Ep4UhjE0y0lkF-6jm__yuWYu2Owz_wg80Gfi6JGcJsO7r0fPk-rdeIXpnn0Vikj_hOvysVGSHw6XnLqoBeTKCb1OJgHVZLNr2QIXTfahKCSYRZCFqRoDtI0fdBRMFl81jjKcIEm"/>
+    </div>
+
+    <!-- Contenido del hero: título, descripción y botones (por encima de la imagen) -->
+    <div class="relative z-20 w-full max-w-[1280px] mx-auto px-margin py-xl grid lg:grid-cols-2 gap-xl items-center">
+      <div class="space-y-lg">
+
+        <!-- Etiqueta pequeña de localización -->
+        <div class="inline-flex items-center gap-sm bg-primary-fixed px-sm py-1 border border-primary text-on-primary-fixed">
+          <span class="w-2 h-2 bg-primary-container"></span>
+          <span class="text-label-bold font-label-bold uppercase tracking-wider">Bajío Industrial Hub</span>
         </div>
+
+        <!-- Título principal (H1 — el más importante de la página para Google) -->
+        <h1 class="text-headline-xl font-headline-xl text-on-surface max-w-xl">
+                    Maquinados de Precisión en León: <span class="text-primary-container">Certeza</span> en Entrega y Calidad ISO.
+                </h1>
+
+        <!-- Subtítulo descriptivo -->
+        <p class="text-body-lg font-body-lg text-on-surface-variant max-w-lg">
+                    Cotizamos en menos de 24 horas. Entregas en 8 días hábiles. Resolvemos tus urgencias de MRO y Herramentales con precisión milimétrica.
+                </p>
+
+        <!-- Dos botones de llamada a la acción -->
+        <div class="flex flex-col sm:flex-row gap-md">
+          <!-- Botón principal (más prominente) -->
+          <button class="bg-primary-container text-on-primary font-label-bold text-label-bold px-xl py-md border border-primary-container active:scale-95 transition-transform duration-150 shadow-lg">
+                        Solicitar Cotización Ahora
+                    </button>
+          <!-- Botón secundario (menos prominente, fondo transparente) -->
+          <button class="bg-transparent text-on-surface font-label-bold text-label-bold px-xl py-md border border-outline hover:bg-surface-container-high transition-all duration-200">
+                        Ver Capacidades
+                    </button>
+        </div>
+
+        <!-- Tres estadísticas clave separadas por líneas verticales -->
+        <div class="flex items-center gap-lg pt-md">
+          <div class="flex flex-col">
+            <span class="text-headline-md font-headline-md text-on-surface">25+</span>
+            <span class="text-label-mono font-label-mono text-on-surface-variant">AÑOS EXP.</span>
+          </div>
+          <!-- Línea divisora vertical -->
+          <div class="w-px h-10 bg-outline-variant"></div>
+          <div class="flex flex-col">
+            <span class="text-headline-md font-headline-md text-on-surface">ISO</span>
+            <span class="text-label-mono font-label-mono text-on-surface-variant">9001:2015</span>
+          </div>
+          <div class="w-px h-10 bg-outline-variant"></div>
+          <div class="flex flex-col">
+            <span class="text-headline-md font-headline-md text-on-surface">&lt;24h</span>
+            <span class="text-label-mono font-label-mono text-on-surface-variant">COTIZACIÓN</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE VENTAJAS RÁPIDAS (Pain Points / Quick Solution)
+       Tres tarjetas que muestran los beneficios principales.
+       "md:grid-cols-3" = 3 columnas en pantallas medianas/grandes
+       ============================================================ -->
+  <section class="bg-surface-container-low py-xl border-b border-outline-variant">
+    <div class="max-w-[1280px] mx-auto px-margin">
+      <div class="grid md:grid-cols-3 gap-lg">
+
+        <!-- Tarjeta 1: Respuesta rápida -->
+        <div class="p-lg bg-surface-container-lowest border border-outline-variant space-y-md">
+          <!-- Ícono de reloj -->
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="timer">timer</span>
+          <h3 class="text-headline-md font-headline-md">Respuesta Inmediata</h3>
+          <p class="text-body-md text-on-surface-variant">Entendemos tu urgencia: Evita paros de línea con nuestra capacidad de respuesta rápida en &lt;24h.</p>
+        </div>
+
+        <!-- Tarjeta 2: Calidad garantizada -->
+        <div class="p-lg bg-surface-container-lowest border border-outline-variant space-y-md">
+          <!-- Ícono de verificación/palomita -->
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="verified">verified</span>
+          <h3 class="text-headline-md font-headline-md">Certeza Total</h3>
+          <p class="text-body-md text-on-surface-variant">Protocolos de inspección rigurosos que garantizan que la pieza llegue correcta a la primera.</p>
+        </div>
+
+        <!-- Tarjeta 3: Entregas rápidas -->
+        <div class="p-lg bg-surface-container-lowest border border-outline-variant space-y-md">
+          <!-- Ícono de camión de entrega -->
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="local_shipping">local_shipping</span>
+          <h3 class="text-headline-md font-headline-md">Entregas en 8 Días</h3>
+          <p class="text-body-md text-on-surface-variant">Logística optimizada para el Bajío. Cumplimos con tus cronogramas de mantenimiento y producción.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE SERVICIOS (Services Grid)
+       Cuadrícula con los 6 servicios que ofrece la empresa.
+       El "id='services'" permite que el menú de navegación salte aquí.
+       ============================================================ -->
+  <section class="py-xl bg-background" id="services">
+    <div class="max-w-[1280px] mx-auto px-margin">
+
+      <!-- Encabezado de la sección: título a la izquierda, descripción a la derecha -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-xl">
+        <div class="space-y-sm">
+          <span class="text-label-mono font-label-mono text-primary-container">CAPACIDADES TÉCNICAS</span>
+          <h2 class="text-headline-lg font-headline-lg">Servicios de Manufactura Avanzada</h2>
+        </div>
+        <p class="text-body-md text-on-surface-variant max-w-md">Equipamiento de última generación para proyectos de alta complejidad y tolerancias cerradas.</p>
       </div>
 
-      <div class="hero-right">
-        <div class="media-placeholder">
-          <p><strong>Image or video</strong> that helps reinforce core value proposition and articulate what it is you do</p>
+      <!-- Cuadrícula de servicios: 1 columna en móvil, 2 en tablet, 3 en escritorio -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+        <!-- Servicio 1: CNC Vertical — tarjeta con imagen de fondo -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <!-- "group-hover:opacity-80" = la imagen se aclara un poco al pasar el cursor -->
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="CNC Machining" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXRihbK_bzJQQjNtYaQEkAmqXA5s2wc-TJFdg8AhjvfUad59feyRsDaHamQou_y_Rjteq6XSSy0fq2H00hISMgPq2wsKhUZcTZfM6KR1bMJJRRcEOpaGcom4FFDpuREYgZRLJ12N5GD-nditScZKkyGmeDTN1K7m2jRF5TT4xQQZ6rCuickB_TSfAtnDBwwlWXcH4VZ2xDwnTkagKsjB3j6PxznCCsC44fCeyFEiw4YBPDaAg9q3zZW4LKcGr0aWD98VRyS-qpoDep"/>
+          <!-- Texto sobre la imagen, en la parte inferior con degradado para legibilidad -->
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h4 class="text-headline-md font-headline-md mb-xs">CNC Vertical</h4>
+            <p class="text-body-sm text-on-surface-variant">Centro de maquinado de 3 y 4 ejes.</p>
+          </div>
         </div>
+
+        <!-- Servicio 2: Torneado -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Turning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6_BnFeXFC55vO13nn-YU7S8vMzjLPXEMlBSWAOxD54gVaSaXaYEHgfDlzgvApAqMbnvrYvZ_r2Li44TtnYFgH9aT_62msNVAzafVVVVZvVSkeQL6X8Rl7_86PJ3VS9Ig4JULGb5jfiTJ8TzeSVzw2IIvLiSKww0FEwe0gsmJ3OVJ1bJWXmCTplP0gNp2KB-N_4CI3RaNAZgGZ7KiYYqSVGcJyu34iD4cCYgrt2Wg9U9PirCMFA6_7zskrgD85S1pwhbNrVCOMqiYI"/>
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h4 class="text-headline-md font-headline-md mb-xs">Torneado</h4>
+            <p class="text-body-sm text-on-surface-variant">Precisión cilíndrica y roscados complejos.</p>
+          </div>
+        </div>
+
+        <!-- Servicio 3: Corte Láser -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Laser Cutting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo7I3jcthSYvMQypWX7QNeBsbdCMFNykSVEqFub8L6BPoLCHMJcnPIdWChYZ8PEPVTA3m-ZDwSyQ0itTAw8Hds15tMDm2j_KQa4Y_pKSf_WwNCqWxfz2stQ7VL0NNPM_zFT8As1KybvXH_hOCY4t46N8sCpSO7nZRy4EVzs_dOJAPIyBjq-V9mSEAYs39i15e5rL-aGkZVN_sGT71_EnfsUIhn7Jrb22nGPxbTso7N4MQTRJPjgmd1Cj1eyfSnwoaYEhjR4XxxBqoL"/>
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h4 class="text-headline-md font-headline-md mb-xs">Corte Láser</h4>
+            <p class="text-body-sm text-on-surface-variant">Formatos de alta precisión y acabados limpios.</p>
+          </div>
+        </div>
+
+        <!-- Servicio 4: Erosionado por Hilo (Wire EDM) -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Wire EDM" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv7O7--Rgv4CaXZBEMeThLzpJ3zXd804VmifCg9GhlNjs96vPzj6CulmeTtJBv9D45JTe-HByiQMT__ffe2jbPnVr2E-mEIJPrnAoyigZxHnt4mnaMng3sMHUT66lcjq_LRjqL0zLN-nmlZvyJ6JZRWIHdD9uBnwwxjwbPRdub4dSttSDnsjP1epQk7l8NACb3KhPqb9CDwimAxqo16SLjTfxueQjGVduswhP7-6Mhb3lLor1EjAdyPQKjldb0ollaEPAhlrdVNwpK"/>
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h4 class="text-headline-md font-headline-md mb-xs">Erosionado por Hilo</h4>
+            <p class="text-body-sm text-on-surface-variant">Cortes geométricos complejos en metales duros.</p>
+          </div>
+        </div>
+
+        <!-- Servicio 5: Fresado Convencional -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="Milling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1cT1StNOehgrfGFtrbaTioyPRr3NJvHSm1rTbYpOJjNdVcTHtatDb34JdEzrtXod-eTWGfzU7tHlwcChnf1GXhfRFwr99_ocyzFn-cNycdxiZecDGB_1eqNIVmi1omQMUUi91mq2DLWqNINdWGPpi0-5wRY0IZyTu-NJsqeDKA7TUvblXauF_JVB1JiqH1jqlA030PgxRS0YMrS8B4wXP4J6almfC4k61G5XwtdzziT4guH5nePfZxVfj3WHAEVxNEsZo4rj0Dbm8"/>
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h4 class="text-headline-md font-headline-md mb-xs">Fresado Convencional</h4>
+            <p class="text-body-sm text-on-surface-variant">Soluciones rápidas para piezas auxiliares.</p>
+          </div>
+        </div>
+
+        <!-- Servicio 6: Tarjeta especial para proyectos personalizados (sin imagen, fondo de color) -->
+        <div class="bg-primary-container border border-primary-container aspect-video flex flex-col items-center justify-center p-lg text-center gap-sm">
+          <span class="material-symbols-outlined text-on-primary text-4xl" data-icon="settings_suggest">settings_suggest</span>
+          <h4 class="text-headline-md font-headline-md text-on-primary">¿Proyecto Especial?</h4>
+          <p class="text-body-sm text-on-primary/80 mb-md">Contamos con ingeniería para diseño y fabricación a medida.</p>
+          <button class="bg-surface-container-lowest text-primary-container font-label-bold text-label-bold px-md py-xs border border-surface-container-lowest">Consultar</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE PRODUCTOS (Products Showcase / Tooling)
+       Muestra los 4 tipos de herramentales y productos que vende.
+       El "id='tooling'" permite que el menú de navegación salte aquí.
+       ============================================================ -->
+  <section class="py-xl bg-surface-container-lowest" id="tooling">
+    <div class="max-w-[1280px] mx-auto px-margin">
+
+      <!-- Encabezado centrado de la sección -->
+      <div class="text-center mb-xl">
+        <h2 class="text-headline-lg font-headline-lg mb-sm">Especialistas en Herramentales y MRO</h2>
+        <p class="text-body-md text-on-surface-variant max-w-2xl mx-auto">Suministramos componentes críticos para mantener tu operación al 100%.</p>
+      </div>
+
+      <!-- Cuadrícula de 4 productos: 2 columnas en móvil, 4 en escritorio -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+
+        <!-- Producto 1: Fixtures & Jigs -->
+        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
+          <!-- Cuadro cuadrado para la imagen del producto -->
+          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
+            <img class="max-w-full h-auto object-contain" data-alt="Fixtures &amp; Jigs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm3VYLemG8UGghboBQ_ZsF-PMyFrbHczHyL-X2nyS_zI3CKi1tRrU_oERhOPf0HMNSq-2TZkYNOf0248yhPsust2a7w5GqCvKwGQl6wFVbb76kkyyyhrBC71IiQhbxXIsfJStkX9dbBbaXdKuNrKWhhS-vlUGT7LXY62FidrRmBStmM0DDmMTzTSFeEaKK_YMxv1DVcnM7ex_G1Cndx5PLt1zppopAJ-YFhHcY6NgChzTruaUHLehRTFC860fDi7MdZU1XN3gzGFiq"/>
+          </div>
+          <!-- Nombre y categoría del producto debajo de la imagen -->
+          <div class="p-md bg-surface-container-low">
+            <span class="text-label-mono text-primary-container">PRODUCTO</span>
+            <h5 class="text-body-md font-label-bold">Fixtures &amp; Jigs</h5>
+          </div>
+        </div>
+
+        <!-- Producto 2: Gages & Calibradores -->
+        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
+          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
+            <img class="max-w-full h-auto object-contain" data-alt="Gages &amp; Calibradores" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9OSl0Uyc2YHDiGlhdnyFE6G6mKw0yOUnZ3k1iA9uga50rjEbJ6QDpIDeJf8NErdhrdKjoJeNXliCFRHbYd9vFBzXYMhOEizniW6UqjjJnFksE-xbtgG6x48Ow-lc6IvUb_pQNZb2bi5LkMlNYUtX2Lrss0RFJgaWUYWQ1TDT_1rb3YgnGcXoK_DRgOiEkSA11COGVAKW1fSwEWHIuiyiEVvBn_ai8e7Dg8QwXq9LUOVJRCMTnp4SdG5OltSZPQfKu4DqIjSHkWFfb"/>
+          </div>
+          <div class="p-md bg-surface-container-low">
+            <span class="text-label-mono text-primary-container">PRECISIÓN</span>
+            <h5 class="text-body-md font-label-bold">Gages &amp; Calibradores</h5>
+          </div>
+        </div>
+
+        <!-- Producto 3: Refacciones Industriales (MRO) -->
+        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
+          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
+            <img class="max-w-full h-auto object-contain" data-alt="Refacciones Industriales" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu7EtXX9T_8Y3KY7_jywqOgty1VDtr3FIMzMkN9A_7Caf142-UjNQ_2Z65y_dDarqf15uhRUu3bXtzLNS72I0haGvMReWmheikSQvv5EjZvuYlMTDoIIv7a_gqGwuLVz0FgN2gtdE2YTyoLTOR_n41Gi48ms5mvGlLSLc9kdHCj5XgscYpULOGKN4_3iKQNhjNkFWa0A_p8hjLjtf2fp-q1u9puVfP63zdzqFw3C5VvXEhRkXaOIN5FVbAd4BctP2aESf_3cd8ikU1"/>
+          </div>
+          <div class="p-md bg-surface-container-low">
+            <span class="text-label-mono text-primary-container">MRO</span>
+            <h5 class="text-body-md font-label-bold">Refacciones Industriales</h5>
+          </div>
+        </div>
+
+        <!-- Producto 4: Herramentales personalizados -->
+        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
+          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
+            <img class="max-w-full h-auto object-contain" data-alt="Herramentales" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnx8GemUNTVgZGqc3sC4QCb4jycddZoMEZ2yq4nf5NG43W_LHSCap8hwXM9hFxer5IdBAw7r23R0brddad_lA3Jt5G2yZnjfVHc5vd_jtyVnP8vKZvnk5kWYyIA6qhL4YXOb1VVJ2dzKrdo_T7hoQTsrsLNd4WvmWZxywX3D1BxWHZqr1e0D1EV6OTKTdCEqPQYeut_z55pJJ7OjtCgVsuRqXvi_k_H5LUjYGGYz84xIvCzp2uHcJRdzEXX06_ReL45KXBhS8kRlPw"/>
+          </div>
+          <div class="p-md bg-surface-container-low">
+            <span class="text-label-mono text-primary-container">CUSTOM</span>
+            <h5 class="text-body-md font-label-bold">Herramentales</h5>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE CALIDAD (Quality / Metrology)
+       Muestra la certificación ISO y el laboratorio de metrología.
+       Tiene fondo con patrón de puntos (bg-grid-pattern).
+       El "id='quality'" permite que el menú de navegación salte aquí.
+       ============================================================ -->
+  <section class="py-xl border-y border-outline-variant bg-grid-pattern" id="quality">
+    <div class="max-w-[1280px] mx-auto px-margin grid lg:grid-cols-2 gap-xl items-center">
+
+      <!-- Columna izquierda: texto y lista de características de calidad -->
+      <div class="space-y-lg">
+        <h2 class="text-headline-lg font-headline-lg">Cultura de Calidad ISO 9001:2015</h2>
+        <p class="text-body-lg text-on-surface-variant">Con más de 25 años en el mercado, nuestra garantía no es solo una palabra, es un proceso documentado. Cada pieza pasa por nuestro laboratorio de Metrología.</p>
+
+        <!-- Lista de tres puntos de calidad, cada uno con ícono, título y descripción -->
+        <ul class="space-y-md">
+
+          <!-- Punto 1: Reportes dimensionales -->
+          <li class="flex items-start gap-md">
+            <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="check_circle">check_circle</span>
+            <div>
+              <h6 class="font-bold">Reportes Dimensionales</h6>
+              <p class="text-body-sm text-on-surface-variant">Documentación técnica incluida en cada entrega crítica.</p>
+            </div>
+          </li>
+
+          <!-- Punto 2: Laboratorio de Metrología -->
+          <li class="flex items-start gap-md">
+            <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="architecture">architecture</span>
+            <div>
+              <h6 class="font-bold">Laboratorio de Metrología</h6>
+              <p class="text-body-sm text-on-surface-variant">CMM y equipos de medición certificados.</p>
+            </div>
+          </li>
+
+          <!-- Punto 3: Gestión de cumplimiento -->
+          <li class="flex items-start gap-md">
+            <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="factory">factory</span>
+            <div>
+              <h6 class="font-bold">Gestión de Cumplimiento</h6>
+              <p class="text-body-sm text-on-surface-variant">Alineados a los estándares de la industria automotriz y aeroespacial del Bajío.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Columna derecha: imagen del laboratorio con borde decorativo -->
+      <div class="relative">
+        <!-- Borde decorativo detrás de la imagen -->
+        <div class="absolute -inset-4 bg-primary-container/5 border border-primary-container/10"></div>
+        <!-- Imagen del laboratorio de metrología -->
+        <img class="relative z-10 w-full border border-outline-variant shadow-xl" data-alt="Metrology Lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2xZTAlu9L6-gW4QTvxRAMo279nV9Y4OPhf48g0dYcwp402VkOCaXoWR7-OOnjezVn2ZGTMRsEVLQmreBiRvtC8jAOuQvzK7yuXDW6F4Zr5z1AwzGyEHiU_8GBIZRxrqHGn34z6decKAhKzIxPjI5-Oit5hfJFhTGvaYx1fKHmE0iCkmWLNj5OspfRkaeaJGFz-Bw1RV73yuvoxop78oDk9vRSONhN7aLLzyS7-rXvskVNEyCEL0dJcpzxsvd-lzJ5VF6AZGAH7i"/>
       </div>
 
     </div>
   </section>
 
-  <!-- SOCIAL PROOF 2 -->
-  <section class="social-proof-2">
-    <div class="container">
-      <p class="social-proof-2-label">Social Proof #2</p>
+  <!-- ============================================================
+       SECCIÓN DEL FORMULARIO DE CONTACTO (Lead Form Section)
+       A la izquierda: información de contacto.
+       A la derecha: formulario para solicitar cotización.
+       ============================================================ -->
+  <section class="py-xl bg-background overflow-hidden">
+    <div class="max-w-[1280px] mx-auto px-margin grid lg:grid-cols-12 gap-xl">
+
+      <!-- Columna izquierda: información de contacto (ocupa 5 de 12 columnas) -->
+      <div class="lg:col-span-5 space-y-lg">
+        <div class="bg-primary-container p-xl border border-primary/20 space-y-md rounded">
+          <h2 class="text-headline-lg font-headline-lg text-on-primary">¿Tienes una urgencia?</h2>
+          <p class="text-body-md text-on-primary/80">Completa el formulario y recibe una respuesta técnica en menos de 24 horas hábiles. Nuestro equipo de ingeniería está listo para analizar tus planos.</p>
+          <!-- Datos de contacto con íconos -->
+          <div class="space-y-sm pt-md text-on-primary">
+            <div class="flex items-center gap-sm">
+              <span class="material-symbols-outlined" data-icon="mail">mail</span>
+              <span>ventas@leonprecision.com</span>
+            </div>
+            <div class="flex items-center gap-sm">
+              <span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+              <span>León, Guanajuato, México</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: formulario (ocupa 7 de 12 columnas) -->
+      <!-- "method=POST" significa que los datos se envían al servidor al hacer submit -->
+      <div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant p-xl shadow-sm rounded">
+        <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-lg" method="POST">
+
+          <!-- Campo: Nombre completo -->
+          <div class="space-y-xs">
+            <label class="text-label-bold font-label-bold uppercase text-on-surface-variant">Nombre Completo</label>
+            <input class="w-full bg-surface-container-low border-b border-outline focus:border-primary-container focus:ring-0 text-on-surface py-sm" placeholder="Ej. Ing. Juan Pérez" type="text"/>
+          </div>
+
+          <!-- Campo: Empresa -->
+          <div class="space-y-xs">
+            <label class="text-label-bold font-label-bold uppercase text-on-surface-variant">Empresa</label>
+            <input class="w-full bg-surface-container-low border-b border-outline focus:border-primary-container focus:ring-0 text-on-surface py-sm" placeholder="Nombre de tu planta" type="text"/>
+          </div>
+
+          <!-- Campo: Correo electrónico (type=email valida el formato automáticamente) -->
+          <div class="space-y-xs">
+            <label class="text-label-bold font-label-bold uppercase text-on-surface-variant">Correo Corporativo</label>
+            <input class="w-full bg-surface-container-low border-b border-outline focus:border-primary-container focus:ring-0 text-on-surface py-sm" placeholder="juan.perez@empresa.com" type="email"/>
+          </div>
+
+          <!-- Campo: Teléfono (type=tel abre teclado numérico en celulares) -->
+          <div class="space-y-xs">
+            <label class="text-label-bold font-label-bold uppercase text-on-surface-variant">Teléfono / WhatsApp</label>
+            <input class="w-full bg-surface-container-low border-b border-outline focus:border-primary-container focus:ring-0 text-on-surface py-sm" placeholder="+52 477 000 0000" type="tel"/>
+          </div>
+
+          <!-- Campo: Descripción del proyecto — ocupa las 2 columnas completas ("md:col-span-2")
+               "rows=4" significa que el cuadro de texto tiene 4 líneas de altura visible -->
+          <div class="md:col-span-2 space-y-xs">
+            <label class="text-label-bold font-label-bold uppercase text-on-surface-variant">Descripción del Proyecto</label>
+            <textarea class="w-full bg-surface-container-low border-b border-outline focus:border-primary-container focus:ring-0 text-on-surface py-sm" placeholder="Detalles de material, tolerancias o cantidad..." rows="4"></textarea>
+          </div>
+
+          <!-- Área para adjuntar archivos (planos en PDF, STEP, DXF) -->
+          <!-- El input real está oculto; el área visual actúa como botón decorativo -->
+          <div class="md:col-span-2">
+            <div class="border-2 border-dashed border-outline-variant p-lg text-center bg-surface-container">
+              <!-- Ícono de nube con flecha hacia arriba -->
+              <span class="material-symbols-outlined text-4xl mb-sm text-primary-container" data-icon="cloud_upload">cloud_upload</span>
+              <p class="text-body-sm text-on-surface-variant">Adjuntar Plano (PDF, STEP, DXF)</p>
+              <!-- El input de tipo "file" permite seleccionar archivos del dispositivo -->
+              <input class="hidden" type="file"/>
+            </div>
+          </div>
+
+          <!-- Botón de envío del formulario — ocupa las 2 columnas -->
+          <div class="md:col-span-2">
+            <button class="w-full bg-primary-container text-on-primary font-label-bold text-label-bold py-md border border-primary-container hover:bg-primary/90 transition-colors rounded" type="submit">
+                            ENVIAR SOLICITUD DE COTIZACIÓN
+                        </button>
+          </div>
+
+        </form>
+      </div>
+
     </div>
   </section>
 
-</body>
-</html>
+  <!-- ============================================================
+       SECCIÓN DE COBERTURA GEOGRÁFICA (Local Context / Map Area)
+       Muestra la ubicación estratégica de León y los tiempos
+       de entrega a otras ciudades del Bajío.
+       ============================================================ -->
+  <section class="bg-surface-container-low py-xl">
+    <div class="max-w-[1280px] mx-auto px-margin flex flex-col md:flex-row items-center gap-xl">
+
+      <!-- Columna izquierda: texto con distancias a ciudades clave -->
+      <div class="flex-1 space-y-md">
+        <h2 class="text-headline-lg font-headline-lg">Servicio Estratégico al Bajío</h2>
+        <p class="text-body-md text-on-surface-variant">Ubicados estratégicamente en León, Gto. facilitamos la logística de entrega inmediata para parques industriales en Silao, Irapuato, Salamanca y Celaya.</p>
+
+        <!-- Etiquetas con los tiempos de traslado a ciudades cercanas -->
+        <div class="flex flex-wrap gap-md">
+          <span class="px-md py-1 border border-outline-variant text-label-mono text-primary-container">SILAO: 20 MIN</span>
+          <span class="px-md py-1 border border-outline-variant text-label-mono text-primary-container">IRAPUATO: 45 MIN</span>
+          <span class="px-md py-1 border border-outline-variant text-label-mono text-primary-container">QUERÉTARO: 1.5 HR</span>
+        </div>
+      </div>
+
+      <!-- Columna derecha: imagen del mapa regional -->
+      <div class="w-full md:w-1/2 aspect-video bg-surface-container border border-outline-variant overflow-hidden rounded">
+        <img class="w-full h-full object-cover" data-alt="Regional Map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_UxdhAK93216eAZVxaIpL9CwvF1JvyaArh0twXvzPEkqZ3WGAOZv7WyVZo9eprHW1216VtxDd2ygbms-NEWhkJ3EqHqUxDlB8nxLa8vuuTFeZOal1-Zc495kWXV8ZvCD84YeFezIHoBXDTFRz_dbqz-oU_RNYKM9rqqto7xedk05cJ-Fw7W5kCyx5i1WKOmQMwNyb5RczQhuzuZJplEUXzvJO37HvSZDXcYiXXNsL0zgAs8wOlggXI5cupGbRMArVKef9Jlrmx1BQ"/>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     PIE DE PÁGINA (Footer)
+     Sección final con información de la empresa, navegación
+     secundaria, datos de contacto y derechos de autor.
+     ============================================================ -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-md px-margin py-xl w-full max-w-[1280px] mx-auto">
+
+    <!-- Columna izquierda del footer: logo, descripción y certificación -->
+    <div class="space-y-lg">
+      <div class="text-headline-md font-bold text-primary">Longoria Tooling</div>
+      <p class="text-body-sm text-on-surface-variant max-w-sm">Soluciones integrales de maquinado industrial con precisión garantizada para la industria manufacturera del Bajío.</p>
+      <!-- Sello de certificación ISO -->
+      <div class="text-label-mono text-primary uppercase font-bold">ISO 9001:2015 COMPLIANT</div>
+    </div>
+
+    <!-- Columna derecha del footer: dos sub-columnas de enlaces -->
+    <div class="grid grid-cols-2 gap-lg">
+
+      <!-- Sub-columna: enlaces de navegación -->
+      <div class="space-y-md">
+        <h6 class="text-label-bold font-label-bold text-on-surface">NAVEGACIÓN</h6>
+        <ul class="space-y-sm">
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#services">Servicios</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#quality">Metrología</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Sub-columna: datos de contacto -->
+      <div class="space-y-md">
+        <h6 class="text-label-bold font-label-bold text-on-surface">CONTACTO</h6>
+        <ul class="space-y-sm">
+          <li class="text-on-surface-variant text-body-sm">León, Gto, México</li>
+          <li><a class="text-primary-container font-bold underline text-body-sm" href="#">Contact Us</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#">Location</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Barra de derechos de autor al final de todo -->
+  <div class="max-w-[1280px] mx-auto px-margin py-md border-t border-outline-variant/30">
+    <p class="text-label-mono text-on-surface-variant/60">© 2024 LEÓN MACHINING SOLUTIONS. ISO 9001:2015 COMPLIANT QUALITY MANAGEMENT.</p>
+  </div>
+</footer>
+
+</body></html>
