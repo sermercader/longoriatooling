@@ -1,17 +1,7 @@
 ﻿<!DOCTYPE html>
-<!-- DOCTYPE le dice al navegador que este es un archivo HTML moderno -->
+<html class="light" lang="es">
+<head>
 
-<!-- La etiqueta <html> es el contenedor de toda la página. "lang=es" indica que el idioma es español.
-     La clase "light" activa el tema claro de colores. -->
-<html class="light" lang="es"><head>
-
-<!-- ============================================================
-     CABECERA DEL DOCUMENTO (no es visible en la página)
-     Aquí se configuran cosas técnicas que el navegador necesita
-     antes de mostrar la página al usuario.
-     ============================================================ -->
-
-<!-- Le dice al navegador qué tipo de caracteres usar (UTF-8 permite acentos y ñ) -->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -19,43 +9,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NZXJN2ND');</script>
 <!-- End Google Tag Manager -->
+
 <meta charset="utf-8"/>
-
-<!-- Hace que la página se vea bien en celulares ajustando el tamaño automáticamente -->
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-
-<!-- El título que aparece en la pestaña del navegador y en Google -->
 <title>Maquinados CNC y Corte Láser Industrial en León | Estándares ISO 9001 | Longoria Tooling</title>
 
-<!-- ── SEO BÁSICO ─────────────────────────────────────────────────────────── -->
-
-<!-- Descripción que Google muestra debajo del título en los resultados de búsqueda.
-     Ideal entre 150-160 caracteres. -->
 <meta name="description" content="Maquinados CNC y Corte láser industrial de metales en León, Gto. Procesos alineados a estándares ISO 9001. Cotización en menos de 24h y entregas en 8 días hábiles para el Bajío."/>
-
-<!-- Le dice a Google que sí puede indexar esta página y seguir sus enlaces -->
 <meta name="robots" content="index, follow"/>
-
-<!-- URL oficial de la página (evita que Google cuente versiones duplicadas como error) -->
 <link rel="canonical" href="https://longoriatm.com.mx/cotiza/"/>
 
-<!-- ── OPEN GRAPH (cómo se ve al compartir en WhatsApp, Facebook, LinkedIn) ── -->
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="es_MX"/>
 <meta property="og:url" content="https://longoriatm.com.mx/cotiza/"/>
 <meta property="og:title" content="Maquinados CNC y Corte Láser Industrial en León | Longoria Tooling"/>
 <meta property="og:description" content="Precisión industrial bajo estándares ISO 9001. Cotización en 24h. Especialistas en herramentales y MRO para la industria del Bajío."/>
-<!-- Imagen que aparece al compartir el link (reemplaza con la URL real de tu imagen) -->
 <meta property="og:image" content="https://longoriatm.com.mx/cotiza/maquinado-cnc-precision-leon-guanajuato.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 
-
 <link rel="icon" type="image/png" href="favicon.png"/>
 
-<!-- ── DATOS ESTRUCTURADOS (JSON-LD) ─────────────────────────────────────── -->
-<!-- Esto le dice a Google exactamente qué tipo de negocio es, dónde está y cómo contactarlo.
-     Puede generar un "rich result" (ficha especial) en los resultados de búsqueda. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,269 +62,1393 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<!-- Carga Tailwind CSS: una biblioteca que nos da clases de estilos ya hechas
-     para no tener que escribir todo el diseño desde cero -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Preconnect para fuentes (no bloquea render) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Carga la fuente tipográfica "IBM Plex Sans" desde Google Fonts (la letra que se ve en la página) -->
-<!-- ital,wght@0,... = versión normal | 1,... = versión itálica | cada número es un peso (400=regular, 500=medium, 600=semibold, 700=bold) -->
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans: carga async -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"></noscript>
 
-<!-- Carga los iconos de Material Symbols (los íconos de Google como el teléfono, reloj, etc.) -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols: carga async -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap"></noscript>
 
 <style>
-        /* Configuración de los íconos: grosor y tamaño normal */
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+/* ============================================================
+   RESET Y BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        /* Texto de las tarjetas — cambia font-size aquí para afectar todas a la vez */
-        .card-text {
-            font-size: 18px;
-            line-height: 1.5;
-            font-weight: 500;
-        }
+/* ============================================================
+   VARIABLES DE DISEÑO (equivale al tailwind.config)
+   ============================================================ */
+:root {
+  /* Colores */
+  --color-primary:                #051625;
+  --color-primary-container:      #1b2b3a;
+  --color-primary-fixed:          #d3e4f8;
+  --color-primary-fixed-dim:      #b8c8dc;
+  --color-on-primary:             #ffffff;
+  --color-on-primary-fixed:       #0c1d2b;
+  --color-on-primary-container:   #8292a5;
+  --color-secondary:              #545f72;
+  --color-secondary-container:    #d5e0f7;
+  --color-on-secondary:           #ffffff;
+  --color-tertiary:               #001042;
+  --color-tertiary-container:     #002171;
+  --color-on-tertiary:            #ffffff;
+  --color-background:             #f7f9fb;
+  --color-surface:                #f7f9fb;
+  --color-surface-bright:         #f7f9fb;
+  --color-surface-dim:            #d8dadc;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container:      #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+  --color-surface-variant:        #e0e3e5;
+  --color-on-surface:             #191c1e;
+  --color-on-surface-variant:     #43474c;
+  --color-outline:                #74777c;
+  --color-outline-variant:        #c4c6cc;
+  --color-inverse-surface:        #2d3133;
+  --color-inverse-on-surface:     #eff1f3;
+  --color-inverse-primary:        #b8c8dc;
+  --color-error:                  #ba1a1a;
+  --color-error-container:        #ffdad6;
+  --color-on-error:               #ffffff;
+  --color-surface-tint:           #506071;
+  --color-whatsapp:               #25D366;
 
-        /* Patrón de puntos grises que se usa de fondo en la sección de calidad */
-        .bg-grid-pattern {
-            background-image: radial-gradient(circle, #c4c6cc 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
+  /* Espaciado */
+  --space-xs:     4px;
+  --space-sm:     8px;
+  --space-md:     16px;
+  --space-lg:     24px;
+  --space-xl:     40px;
+  --space-margin: 32px;
+  --space-gutter: 24px;
 
-        /* Carrusel de logos — scroll infinito automático */
-        .logo-track {
-            display: flex;
-            width: max-content;
-            animation: logo-scroll 55s linear infinite;
-        }
-        .logo-track:hover {
-            animation-play-state: paused;
-        }
-        @keyframes logo-scroll {
-            from { transform: translateX(0); }
-            to   { transform: translateX(-50%); }
-        }
-    </style>
+  /* Tipografía */
+  --font-family: 'IBM Plex Sans', sans-serif;
+  --font-icons:  'Material Symbols Outlined';
 
-<!-- ============================================================
-     CONFIGURACIÓN DE COLORES Y TAMAÑOS
-     Aquí se definen todos los colores de la marca y los tamaños
-     de texto que se usan en toda la página.
-     ============================================================ -->
-<script id="tailwind-config">
-      tailwind.config = {
-        /* "darkMode: class" significa que el modo oscuro se activa poniendo una clase en el HTML */
-        darkMode: "class",
-        theme: {
-          extend: {
-            /* PALETA DE COLORES — cada nombre es un color que se usa en la página */
-            "colors": {
-                    "on-primary-fixed": "#0c1d2b",        /* texto sobre fondo azul claro fijo */
-                    "surface-variant": "#e0e3e5",          /* superficie alternativa gris claro */
-                    "inverse-primary": "#b8c8dc",          /* primario invertido (para fondos oscuros) */
-                    "surface-container-low": "#f2f4f6",    /* contenedor con fondo muy claro */
-                    "secondary": "#545f72",                /* color secundario, gris azulado */
-                    "on-primary": "#ffffff",               /* texto blanco que va sobre el color primario */
-                    "primary-fixed": "#d3e4f8",            /* versión fija del color primario (azul muy claro) */
-                    "on-error": "#ffffff",                 /* texto blanco sobre color de error */
-                    "tertiary-fixed-dim": "#b6c4ff",       /* terciario fijo más oscuro */
-                    "tertiary-container": "#002171",       /* contenedor del color terciario (azul marino) */
-                    "on-primary-fixed-variant": "#384858", /* texto sobre variante fija primaria */
-                    "on-tertiary-fixed-variant": "#0039b3",/* texto sobre variante terciaria fija */
-                    "secondary-container": "#d5e0f7",      /* contenedor del color secundario */
-                    "surface-container-highest": "#e0e3e5",/* contenedor más oscuro de superficie */
-                    "on-tertiary-container": "#1B2B3A",    /* texto sobre contenedor terciario */
-                    "surface-bright": "#f7f9fb",           /* superficie brillante/clara */
-                    "on-secondary-fixed-variant": "#3c475a",/* texto sobre variante secundaria fija */
-                    "outline": "#74777c",                  /* color de bordes y líneas */
-                    "on-background": "#191c1e",            /* texto sobre fondo principal */
-                    "secondary-fixed-dim": "#bcc7dd",      /* secundario fijo más tenue */
-                    "on-error-container": "#93000a",       /* texto oscuro sobre contenedor de error */
-                    "tertiary": "#001042",                 /* color terciario (azul muy oscuro) */
-                    "secondary-fixed": "#d8e3fa",          /* secundario fijo */
-                    "outline-variant": "#c4c6cc",          /* bordes más sutiles */
-                    "primary-fixed-dim": "#b8c8dc",        /* primario fijo más tenue */
-                    "error": "#ba1a1a",                    /* color rojo para errores */
-                    "surface-container": "#eceef0",        /* fondo de tarjetas/contenedores */
-                    "surface": "#f7f9fb",                  /* color de superficie principal */
-                    "inverse-on-surface": "#eff1f3",       /* texto sobre superficie invertida */
-                    "error-container": "#ffdad6",          /* fondo para mensajes de error */
-                    "on-secondary-container": "#586377",   /* texto sobre contenedor secundario */
-                    "inverse-surface": "#2d3133",          /* superficie invertida (modo oscuro) */
-                    "on-surface-variant": "#43474c",       /* texto secundario sobre superficie */
-                    "on-primary-container": "#8292a5",     /* texto sobre contenedor primario */
-                    "tertiary-fixed": "#dce1ff",           /* terciario fijo (lila claro) */
-                    "background": "#f7f9fb",               /* color de fondo general de la página */
-                    "surface-container-lowest": "#ffffff", /* blanco puro — el más claro */
-                    "surface-container-high": "#e6e8ea",   /* contenedor algo más oscuro */
-                    "surface-tint": "#506071",             /* tinte sobre superficies */
-                    "on-tertiary": "#ffffff",              /* texto blanco sobre terciario */
-                    "on-secondary": "#ffffff",             /* texto blanco sobre secundario */
-                    "on-surface": "#191c1e",               /* texto principal oscuro */
-                    "primary-container": "#1b2b3a",        /* contenedor azul marino oscuro (color de marca) */
-                    "surface-dim": "#d8dadc",              /* superficie atenuada */
-                    "on-secondary-fixed": "#111c2c",       /* texto oscuro sobre secundario fijo */
-                    "on-tertiary-fixed": "#001551",        /* texto sobre terciario fijo */
-                    "primary": "#051625"                   /* color primario principal (azul casi negro) */
-            },
-            /* BORDES REDONDEADOS — qué tan redondas son las esquinas de los elementos */
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",  /* borde predeterminado: muy poco redondeado */
-                    "lg": "0.25rem",        /* grande: un poco más redondeado */
-                    "xl": "0.5rem",         /* extra grande */
-                    "full": "0.75rem"       /* completamente redondeado */
-            },
-            /* ESPACIADOS — distancias entre elementos */
-            "spacing": {
-                    "sm": "8px",       /* pequeño: 8 píxeles */
-                    "xs": "4px",       /* extra pequeño: 4 píxeles */
-                    "gutter": "24px",  /* espacio entre columnas */
-                    "md": "16px",      /* mediano: 16 píxeles */
-                    "lg": "24px",      /* grande: 24 píxeles */
-                    "unit": "4px",     /* unidad base */
-                    "xl": "40px",      /* extra grande: 40 píxeles */
-                    "margin": "32px"   /* margen lateral de la página */
-            },
-            /* TIPOGRAFÍA — familias de fuentes por tipo de texto */
-            "fontFamily": {
-                    "headline-md": ["IBM Plex Sans"],   /* titular mediano — fuente monoespaciada */
-                    "body-sm": ["IBM Plex Sans"],       /* cuerpo de texto pequeño — fuente sans */
-                    "label-bold": ["IBM Plex Sans"],    /* etiqueta en negritas — fuente monoespaciada */
-                    "headline-xl": ["IBM Plex Sans"],   /* titular extra grande — fuente monoespaciada */
-                    "body-md": ["IBM Plex Sans"],       /* cuerpo de texto mediano — fuente sans */
-                    "body-lg": ["IBM Plex Sans"],       /* cuerpo de texto grande — fuente sans */
-                    "headline-lg": ["IBM Plex Sans"],   /* titular grande — fuente monoespaciada */
-                    "label-mono": ["IBM Plex Sans"]     /* etiqueta monoespaciada — fuente monoespaciada */
-            },
-            /* TAMAÑOS DE TEXTO — tamaño, altura de línea y peso de cada tipo */
-            "fontSize": {
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                    "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                    "label-mono": ["13px", {"lineHeight": "1", "fontWeight": "500"}]
-            }
-          },
-        },
-      }
-    </script>
+  /* Border radius */
+  --radius-default: 2px;
+  --radius-lg:      4px;
+  --radius-xl:      8px;
+  --radius-full:    12px;
+}
+
+/* ============================================================
+   TIPOGRAFÍA BASE
+   ============================================================ */
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+picture {
+  display: contents;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Escalas tipográficas */
+.text-headline-xl {
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.text-headline-lg {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+.text-headline-md {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.text-body-lg {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.text-body-md {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.text-body-sm {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.text-label-bold {
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.text-label-mono {
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+/* ============================================================
+   ICONOS (Material Symbols)
+   ============================================================ */
+.material-symbols-outlined {
+  font-family: var(--font-icons), sans-serif;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.container {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--space-margin);
+}
+
+.flex        { display: flex; }
+.flex-col    { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start  { align-items: flex-start; }
+.items-end    { align-items: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-center  { justify-content: center; }
+.flex-wrap   { flex-wrap: wrap; }
+.flex-1      { flex: 1; }
+.shrink-0    { flex-shrink: 0; }
+.relative    { position: relative; }
+.absolute    { position: absolute; }
+.sticky      { position: sticky; }
+.overflow-hidden { overflow: hidden; }
+.w-full      { width: 100%; }
+.h-full      { height: 100%; }
+.text-center { text-align: center; }
+.font-bold   { font-weight: 700; }
+.font-medium { font-weight: 500; }
+
+/* Gaps */
+.gap-xs  { gap: var(--space-xs); }
+.gap-sm  { gap: var(--space-sm); }
+.gap-md  { gap: var(--space-md); }
+.gap-lg  { gap: var(--space-lg); }
+.gap-xl  { gap: var(--space-xl); }
+
+/* Padding */
+.py-sm   { padding-block: var(--space-sm); }
+.py-md   { padding-block: var(--space-md); }
+.py-xl   { padding-block: var(--space-xl); }
+.px-sm   { padding-inline: var(--space-sm); }
+.px-md   { padding-inline: var(--space-md); }
+.px-lg   { padding-inline: var(--space-lg); }
+.px-xl   { padding-inline: var(--space-xl); }
+.p-sm    { padding: var(--space-sm); }
+.p-md    { padding: var(--space-md); }
+.p-lg    { padding: var(--space-lg); }
+.p-xl    { padding: var(--space-xl); }
+
+/* Margin */
+.mb-xs   { margin-bottom: var(--space-xs); }
+.mb-sm   { margin-bottom: var(--space-sm); }
+.mb-md   { margin-bottom: var(--space-md); }
+.mb-xl   { margin-bottom: var(--space-xl); }
+.mt-lg   { margin-top: var(--space-lg); }
+.mt-sm   { margin-top: var(--space-sm); }
+.mx-auto { margin-inline: auto; }
+.pt-md   { padding-top: var(--space-md); }
+.pt-sm   { padding-top: var(--space-sm); }
+
+/* ============================================================
+   COLORES DE TEXTO
+   ============================================================ */
+.text-primary            { color: var(--color-primary); }
+.text-primary-container  { color: var(--color-primary-container); }
+.text-on-surface         { color: var(--color-on-surface); }
+.text-on-surface-variant { color: var(--color-on-surface-variant); }
+.text-on-primary         { color: var(--color-on-primary); }
+.text-on-primary-fixed   { color: var(--color-on-primary-fixed); }
+.text-whatsapp           { color: var(--color-whatsapp); }
+
+/* ============================================================
+   BORDES
+   ============================================================ */
+.border          { border: 1px solid var(--color-outline-variant); }
+.border-top      { border-top: 1px solid var(--color-outline-variant); }
+.border-bottom   { border-bottom: 1px solid var(--color-outline-variant); }
+.border-primary  { border-color: var(--color-primary) !important; }
+.rounded         { border-radius: var(--radius-lg); }
+.rounded-full    { border-radius: var(--radius-full); }
+
+/* ============================================================
+   FONDOS
+   ============================================================ */
+.bg-background              { background-color: var(--color-background); }
+.bg-surface-container       { background-color: var(--color-surface-container); }
+.bg-surface-container-low   { background-color: var(--color-surface-container-low); }
+.bg-surface-container-lowest{ background-color: var(--color-surface-container-lowest); }
+.bg-primary-container       { background-color: var(--color-primary-container); }
+.bg-primary-fixed           { background-color: var(--color-primary-fixed); }
+.bg-white                   { background-color: #ffffff; }
+.bg-transparent             { background-color: transparent; }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header {
+  background-color: var(--color-surface-container-lowest);
+  border-bottom: 1px solid var(--color-outline-variant);
+  top: 0;
+  position: sticky;
+  z-index: 50;
+  transition: all 0.2s ease;
+}
+
+.site-header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-margin);
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+}
+
+.main-nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.main-nav a {
+  color: var(--color-on-surface-variant);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  color: var(--color-primary);
+}
+
+.btn-header {
+  display: none;
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary);
+  padding: var(--space-xs) var(--space-lg);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--radius-lg);
+  transition: transform 0.15s;
+}
+
+.btn-header:active {
+  transform: scale(0.95);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--color-background) 30%, rgba(247,249,251,0.8) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: var(--space-xl) var(--space-margin);
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: var(--color-primary-fixed);
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-primary);
+  width: fit-content;
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary-container);
+  flex-shrink: 0;
+}
+
+.hero-badge span {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-on-primary-fixed);
+}
+
+.hero h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  max-width: 560px;
+}
+
+.hero h1 span {
+  color: var(--color-primary-container);
+}
+
+.hero-desc {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--color-on-surface-variant);
+  max-width: 480px;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary);
+  font-weight: 700;
+  font-size: 16px;
+  padding: var(--space-md) var(--space-xl);
+  border: 1px solid var(--color-primary-container);
+  transition: transform 0.15s;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-on-surface);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: var(--space-md) var(--space-xl);
+  border: 1px solid var(--color-outline);
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-container-high);
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-top: var(--space-md);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.stat-label {
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 500;
+  color: var(--color-on-surface-variant);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background-color: var(--color-outline-variant);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   QUICK WINS (3 tarjetas)
+   ============================================================ */
+.quick-wins {
+  background-color: var(--color-surface-container-low);
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.quick-wins-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.qw-card {
+  padding: var(--space-lg);
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.qw-icon {
+  font-size: 36px;
+  color: var(--color-primary-container);
+}
+
+.qw-card h3 {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.qw-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-on-surface-variant);
+}
+
+/* ============================================================
+   LOGOS CAROUSEL
+   ============================================================ */
+.logos-section {
+  padding-block: var(--space-xl);
+  background-color: var(--color-surface-container-lowest);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.logos-section h2 {
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.logos-section .intro {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-on-surface-variant);
+  max-width: 672px;
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.logo-carousel-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-fade-left {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 96px;
+  background: linear-gradient(to right, var(--color-surface-container-lowest), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logo-fade-right {
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  width: 96px;
+  background: linear-gradient(to left, var(--color-surface-container-lowest), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: logo-scroll 55s linear infinite;
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-inline: var(--space-lg);
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 144px;
+  height: 64px;
+  background: #ffffff;
+  border: 1px solid var(--color-outline-variant);
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition: opacity 0.3s, filter 0.3s;
+  flex-shrink: 0;
+  padding: 8px;
+}
+
+.logo-item:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.logo-item img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.industry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-on-surface-variant);
+}
+
+.industry-tag {
+  padding: var(--space-xs) var(--space-md);
+  background-color: var(--color-primary-fixed);
+  border: 1px solid rgba(5,22,37,0.2);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-on-primary-fixed);
+}
+
+/* ============================================================
+   SERVICIOS
+   ============================================================ */
+.services-section {
+  padding-block: var(--space-xl);
+  background-color: var(--color-background);
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.section-eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary-container);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-on-surface-variant);
+  max-width: 448px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-gutter);
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  aspect-ratio: 16 / 9;
+}
+
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.service-card:hover img {
+  opacity: 0.8;
+}
+
+.service-card-body {
+  position: absolute;
+  inset: 0;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(247,249,251,0.9), transparent);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.service-card p {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--color-on-surface-variant);
+}
+
+.service-card-cta {
+  background-color: var(--color-primary-container);
+  border: 1px solid var(--color-primary-container);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  text-align: center;
+  gap: var(--space-sm);
+  overflow: hidden;
+}
+
+.service-card-cta .icon {
+  font-size: 36px;
+  color: var(--color-on-primary);
+}
+
+.service-card-cta h4 {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--color-on-primary);
+}
+
+.service-card-cta p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: var(--space-md);
+}
+
+.btn-cta-card {
+  display: inline-block;
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-primary-container);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-surface-container-lowest);
+}
+
+/* ============================================================
+   TOOLING / PRODUCTOS
+   ============================================================ */
+.tooling-section {
+  padding-block: var(--space-xl);
+  background-color: var(--color-surface-container-lowest);
+}
+
+.tooling-section .section-header {
+  text-align: center;
+  align-items: center;
+}
+
+.tooling-section .section-header p {
+  max-width: 672px;
+  text-align: center;
+}
+
+.tooling-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.tooling-card {
+  border: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface-container-low);
+  overflow: hidden;
+}
+
+.tooling-img-wrap {
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-surface-container);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooling-img-wrap img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.tooling-info {
+  padding: var(--space-md);
+  background-color: var(--color-surface-container-low);
+}
+
+.tooling-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary-container);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.tooling-info h5 {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+/* ============================================================
+   CALIDAD
+   ============================================================ */
+.quality-section {
+  padding-block: var(--space-xl);
+  border-top: 1px solid var(--color-outline-variant);
+  border-bottom: 1px solid var(--color-outline-variant);
+  background-image: radial-gradient(circle, #c4c6cc 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.quality-grid {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.quality-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.quality-text h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.quality-text > p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-on-surface-variant);
+}
+
+.quality-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.quality-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.quality-item .icon {
+  font-size: 24px;
+  color: var(--color-primary-container);
+  flex-shrink: 0;
+}
+
+.quality-item h6 {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.quality-item p {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--color-on-surface-variant);
+}
+
+.quality-img-wrap {
+  position: relative;
+}
+
+.quality-img-deco {
+  position: absolute;
+  inset: -16px;
+  background-color: rgba(27,43,58,0.05);
+  border: 1px solid rgba(27,43,58,0.1);
+}
+
+.quality-img-wrap img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* ============================================================
+   CONTACTO / CTA
+   ============================================================ */
+.contact-section {
+  padding-block: var(--space-xl);
+  background-color: var(--color-background);
+  overflow: hidden;
+}
+
+.contact-box {
+  background-color: var(--color-primary-container);
+  padding: var(--space-xl);
+  border: 1px solid rgba(5,22,37,0.2);
+  border-radius: var(--radius-full);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+.contact-box h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--color-on-primary);
+}
+
+.contact-box p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  max-width: 512px;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: var(--color-whatsapp);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transition: transform 0.15s;
+}
+
+.btn-whatsapp:active {
+  transform: scale(0.95);
+}
+
+.btn-whatsapp svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.contact-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-top: var(--space-md);
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contact-meta a {
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+}
+
+.contact-meta a:hover {
+  color: #ffffff;
+}
+
+.contact-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.contact-meta-item .icon {
+  font-size: 16px;
+}
+
+/* ============================================================
+   COBERTURA
+   ============================================================ */
+.coverage-section {
+  background-color: var(--color-surface-container-low);
+  padding-block: var(--space-xl);
+}
+
+.coverage-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.coverage-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.coverage-text h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.coverage-text > p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-on-surface-variant);
+}
+
+.coverage-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.coverage-list li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-on-surface-variant);
+}
+
+.coverage-list li strong {
+  color: var(--color-on-surface);
+}
+
+.coverage-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding-top: var(--space-sm);
+}
+
+.coverage-tag {
+  padding: 4px var(--space-md);
+  border: 1px solid var(--color-outline-variant);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary-container);
+}
+
+.coverage-map {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.coverage-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background-color: var(--color-surface-container-lowest);
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-xl) var(--space-margin);
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.footer-brand-name {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-on-surface-variant);
+  max-width: 384px;
+  margin-bottom: var(--space-lg);
+}
+
+.footer-iso {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-nav h6,
+.footer-contact h6 {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-md);
+}
+
+.footer-nav ul,
+.footer-contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-nav a,
+.footer-contact a,
+.footer-contact li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-on-surface-variant);
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover {
+  color: var(--color-primary);
+}
+
+.footer-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-whatsapp) !important;
+  font-weight: 700;
+}
+
+.footer-wa svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: var(--space-md) var(--space-margin);
+  border-top: 1px solid rgba(196,198,204,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(67,71,76,0.6);
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≥ 768px)
+   ============================================================ */
+@media (min-width: 768px) {
+  .main-nav     { display: flex; }
+  .btn-header   { display: block; }
+
+  .quick-wins-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .hero-ctas {
+    flex-direction: row;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tooling-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .coverage-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .coverage-text {
+    flex: 1;
+  }
+
+  .coverage-map {
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  .contact-meta {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — DESKTOP (≥ 1024px)
+   ============================================================ */
+@media (min-width: 1024px) {
+  .hero-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .quality-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
 </head>
 
-<!-- ============================================================
-     CUERPO DE LA PÁGINA — todo lo que el usuario puede ver
-     "bg-background" = color de fondo, "text-on-surface" = color del texto principal
-     "overflow-x-hidden" = evita que aparezca barra de desplazamiento horizontal
-     ============================================================ -->
-<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZXJN2ND"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZXJN2ND" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- ============================================================
-     BARRA DE NAVEGACIÓN SUPERIOR (TopAppBar)
-     Se queda fija en la parte de arriba aunque el usuario haga scroll.
-     "sticky z-50" = pegada arriba con prioridad visual alta
+     HEADER
      ============================================================ -->
-<header class="bg-surface-container-lowest border-b border-outline-variant docked full-width top-0 sticky z-50 transition-all duration-200">
-  <div class="flex justify-between items-center px-margin py-sm w-full max-w-[1280px] mx-auto">
-
-    <!-- Logo + nombre -->
-    <a href="#" class="flex items-center gap-sm">
-      <img src="favicon.png" alt="Longoria Tooling" class="h-10 w-auto object-contain"/>
-      <span class="text-headline-md font-headline-md font-bold tracking-tighter text-primary">LONGORIA TOOLING</span>
+<header class="site-header">
+  <div class="inner">
+    <a href="#" class="logo-link">
+      <picture>
+        <source srcset="favicon.webp" type="image/webp"/>
+        <img src="favicon.png" alt="Longoria Tooling" class="logo-img" width="40" height="40"/>
+      </picture>
+      <span class="logo-text">LONGORIA TOOLING</span>
     </a>
 
-    <!-- Menú de navegación — solo visible en pantallas medianas y grandes ("hidden md:flex") -->
-    <nav class="hidden md:flex items-center gap-lg">
-      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#services">Servicios</a>
-      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#tooling">Especialidades</a>
-      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#quality">Calidad</a>
+    <nav class="main-nav">
+      <a href="#services">Servicios</a>
+      <a href="#tooling">Especialidades</a>
+      <a href="#quality">Calidad</a>
     </nav>
 
-    <!-- Botones de acción en el lado derecho del menú -->
     <div class="flex items-center gap-md">
-      <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-primary-container text-on-primary px-lg py-xs font-label-bold text-label-bold active:scale-95 transition-transform duration-150 rounded">
+      <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-header">
         Cotizar Ahora
       </a>
     </div>
-
   </div>
 </header>
 
 <!-- ============================================================
-     CONTENIDO PRINCIPAL DE LA PÁGINA
-     Todo el contenido visible entre el menú y el pie de página
+     MAIN
      ============================================================ -->
 <main>
 
-  <!-- ============================================================
-       SECCIÓN HERO (Banner principal)
-       Es la primera sección grande que el usuario ve al entrar.
-       Tiene una imagen de fondo, un título, descripción y botones.
-       ============================================================ -->
-  <section class="relative min-h-[700px] flex items-center overflow-hidden border-b border-outline-variant">
-
-    <!-- Imagen de fondo con degradado encima para que el texto sea legible -->
-    <div class="absolute inset-0 z-0">
-      <!-- Degradado: va de opaco a la izquierda a transparente a la derecha,
-           así el texto del lado izquierdo es legible sobre la imagen -->
-      <div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
-      <!-- Imagen de una máquina CNC de 5 ejes -->
-      <img class="w-full h-full object-cover" alt="Maquinado CNC de precisión en taller industrial de Longoria Tooling en León, Guanajuato" src="maquinado-cnc-precision-leon-guanajuato.jpg"/>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <picture>
+        <source srcset="maquinado-cnc-precision-leon-guanajuato.webp" type="image/webp"/>
+        <img
+          class="hero-img"
+          alt="Maquinado CNC de precisión en taller industrial de Longoria Tooling en León, Guanajuato"
+          src="maquinado-cnc-precision-leon-guanajuato.jpg"
+          fetchpriority="high"
+          loading="eager"
+          width="1280"
+          height="700"
+        />
+      </picture>
     </div>
 
-    <!-- Contenido del hero: título, descripción y botones (por encima de la imagen) -->
-    <div class="relative z-20 w-full max-w-[1280px] mx-auto px-margin py-xl grid lg:grid-cols-2 gap-xl items-center">
-      <div class="space-y-lg">
+    <div class="hero-content">
+      <div class="hero-text">
 
-        <!-- Etiqueta pequeña de localización -->
-        <div class="inline-flex items-center gap-sm bg-primary-fixed px-sm py-1 border border-primary text-on-primary-fixed">
-          <span class="w-2 h-2 bg-primary-container"></span>
-          <span class="text-label-bold font-label-bold uppercase tracking-wider">Atendemos todo el Bajío</span>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>Atendemos todo el Bajío</span>
         </div>
 
-        <!-- Título principal (H1 — el más importante de la página para Google) -->
-        <h1 class="text-headline-xl font-headline-xl text-on-surface max-w-xl">
-                    Maquinados de Precisión en León: <span class="text-primary-container">Certeza</span> en Entrega y Calidad ISO.
-                </h1>
+        <h1>
+          Maquinados de Precisión en León: <span>Certeza</span> en Entrega y Calidad ISO.
+        </h1>
 
-        <!-- Subtítulo descriptivo -->
-        <p class="text-body-lg font-body-lg font-medium text-on-surface-variant max-w-lg">
-                    Cotizamos en menos de 24 horas. Entregas en 8 días hábiles. Resolvemos tus urgencias de MRO y Herramentales con precisión milimétrica.
-                </p>
+        <p class="hero-desc">
+          Cotizamos en menos de 24 horas. Entregas en 8 días hábiles. Resolvemos tus urgencias de MRO y Herramentales con precisión milimétrica.
+        </p>
 
-        <!-- Dos botones de llamada a la acción -->
-        <div class="flex flex-col sm:flex-row gap-md">
-          <!-- Botón principal (más prominente) -->
-          <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="bg-primary-container text-on-primary font-bold text-base px-xl py-md border border-primary-container active:scale-95 transition-transform duration-150 shadow-lg text-center">
+        <div class="hero-ctas">
+          <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-primary">
             Solicitar Cotización Ahora
           </a>
-          <a href="#services" class="bg-transparent text-on-surface font-label-bold text-label-bold px-xl py-md border border-outline hover:bg-surface-container-high transition-all duration-200 text-center">
+          <a href="#services" class="btn-secondary">
             Ver Capacidades
           </a>
         </div>
 
-        <!-- Tres estadísticas clave separadas por líneas verticales -->
-        <div class="flex items-center gap-lg pt-md">
-          <div class="flex flex-col">
-            <span class="text-headline-md font-headline-md text-on-surface">25+</span>
-            <span class="text-label-mono font-label-mono text-on-surface-variant">AÑOS EXP.</span>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">25+</span>
+            <span class="stat-label">AÑOS EXP.</span>
           </div>
-          <!-- Línea divisora vertical -->
-          <div class="w-px h-10 bg-outline-variant"></div>
-          <div class="flex flex-col">
-            <span class="text-headline-md font-headline-md text-on-surface">&lt;24h</span>
-            <span class="text-label-mono font-label-mono text-on-surface-variant">COTIZACIÓN</span>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">&lt;24h</span>
+            <span class="stat-label">COTIZACIÓN</span>
           </div>
-          <div class="w-px h-10 bg-outline-variant"></div>
-          <div class="flex flex-col">
-            <span class="text-headline-md font-headline-md text-on-surface">&lt;8 DÍAS</span>
-            <span class="text-label-mono font-label-mono text-on-surface-variant">PROMEDIO DE ENTREGA</span>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">&lt;8 DÍAS</span>
+            <span class="stat-label">PROMEDIO DE ENTREGA</span>
           </div>
         </div>
 
@@ -359,453 +1456,401 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ============================================================
-       SECCIÓN DE VENTAJAS RÁPIDAS (Pain Points / Quick Solution)
-       Tres tarjetas que muestran los beneficios principales.
-       "md:grid-cols-3" = 3 columnas en pantallas medianas/grandes
-       ============================================================ -->
-  <section class="bg-surface-container-low py-xl border-b border-outline-variant">
-    <div class="max-w-[1280px] mx-auto px-margin">
-      <div class="grid md:grid-cols-3 gap-lg">
+  <!-- QUICK WINS -->
+  <section class="quick-wins">
+    <div class="container">
+      <div class="quick-wins-grid">
 
-        <!-- Tarjeta 1: Respuesta rápida -->
-        <div class="p-lg bg-surface-container-lowest border border-outline-variant space-y-md">
-          <!-- Ícono de reloj -->
-          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="timer">timer</span>
-          <h3 class="text-headline-md font-headline-md">Respuesta Inmediata</h3>
-          <p class="text-body-md text-on-surface-variant">Entendemos tu urgencia: Evita paros de línea con nuestra capacidad de respuesta rápida en &lt;24h.</p>
+        <div class="qw-card">
+          <span class="material-symbols-outlined qw-icon">timer</span>
+          <h3>Respuesta Inmediata</h3>
+          <p>Entendemos tu urgencia: Evita paros de línea con nuestra capacidad de respuesta rápida en &lt;24h.</p>
         </div>
 
-        <!-- Tarjeta 2: Calidad garantizada -->
-        <div class="p-lg bg-surface-container-lowest border border-outline-variant space-y-md">
-          <!-- Ícono de verificación/palomita -->
-          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="verified">verified</span>
-          <h3 class="text-headline-md font-headline-md">Certeza Total</h3>
-          <p class="text-body-md text-on-surface-variant">Protocolos de inspección rigurosos que garantizan que la pieza llegue correcta a la primera.</p>
+        <div class="qw-card">
+          <span class="material-symbols-outlined qw-icon">verified</span>
+          <h3>Certeza Total</h3>
+          <p>Protocolos de inspección rigurosos que garantizan que la pieza llegue correcta a la primera.</p>
         </div>
 
-        <!-- Tarjeta 3: Entregas rápidas -->
-        <div class="p-lg bg-surface-container-lowest border border-outline-variant space-y-md">
-          <!-- Ícono de camión de entrega -->
-          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="local_shipping">local_shipping</span>
-          <h3 class="text-headline-md font-headline-md">Entregas en 8 Días</h3>
-          <p class="text-body-md text-on-surface-variant">Logística optimizada para el Bajío. Cumplimos con tus cronogramas de mantenimiento y producción.</p>
+        <div class="qw-card">
+          <span class="material-symbols-outlined qw-icon">local_shipping</span>
+          <h3>Entregas en 8 Días</h3>
+          <p>Logística optimizada para el Bajío. Cumplimos con tus cronogramas de mantenimiento y producción.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SECCIÓN DE PRUEBA SOCIAL — Logos de clientes
-       Muestra confianza: si grandes empresas confían en nosotros,
-       el visitante también puede confiar.
-       ============================================================ -->
-  <section class="py-xl bg-surface-container-lowest border-b border-outline-variant">
-    <div class="max-w-[1280px] mx-auto px-margin">
+  <!-- LOGOS -->
+  <section class="logos-section">
+    <div class="container">
+      <h2>Empresas que confían en nosotros</h2>
+      <p class="intro">Más de 25 años respaldando operaciones industriales en el Bajío. Nuestros clientes nos eligen porque saben que cada pieza llega correcta, a tiempo y documentada.</p>
 
-      <!-- Título de la sección -->
-      <h2 class="text-center text-headline-lg font-headline-lg text-on-surface mb-md">Empresas que confían en nosotros</h2>
-
-      <!-- Párrafo de autoridad -->
-      <p class="text-center text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-xl">Más de 25 años respaldando operaciones industriales en el Bajío. Nuestros clientes nos eligen porque saben que cada pieza llega correcta, a tiempo y documentada.</p>
-
-      <!-- Carrusel infinito de logos — se desplaza solo y pausa al pasar el cursor -->
-      <div class="overflow-hidden relative">
-        <!-- Degradados en los bordes para efecto de fundido -->
-        <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-surface-container-lowest to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-surface-container-lowest to-transparent z-10 pointer-events-none"></div>
+      <div class="logo-carousel-wrap">
+        <div class="logo-fade-left"></div>
+        <div class="logo-fade-right"></div>
 
         <div class="logo-track">
-
-          <!-- ── PRIMERA COPIA ── -->
-          <div class="flex items-center gap-lg px-lg">
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="seal-foam.jpg" alt="Seal &amp; Foam" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="at-mx.jpg" alt="AT-MX" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="denso.jpg" alt="Denso" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="nidec.jpg" alt="Nidec" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="baumann.jpg" alt="Baumann" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="guala-dispensing.jpg" alt="Guala Dispensing" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="vest-de-mexico.jpg" alt="Vest de México" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="borg-warner.jpg" alt="BorgWarner" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="van-vien.jpg" alt="Van Vien" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="kamax.jpg" alt="Kamax" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="tekfor.jpg" alt="Tekfor" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="schaeffler-de-mexico.jpg" alt="Schaeffler de México" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="haldex.jpg" alt="Haldex" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="grupo-modelo.jpg" alt="Grupo Modelo" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="grupo-gondi.jpg" alt="Grupo Gondi" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="continental-automotive.jpg" alt="Continental Automotive" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="centro-investigacion-optica.jpg" alt="Centro de Investigación en Óptica" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="lear-corporation.jpg" alt="Lear Corporation" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="aam-maquiladora.jpg" alt="AAM Maquiladora" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo21.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo22.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo23.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo24.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo25.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
+          <!-- Primera copia -->
+          <div class="logo-row">
+            <div class="logo-item"><picture><source srcset="seal-foam.webp" type="image/webp"/><img src="seal-foam.jpg" alt="Seal &amp; Foam" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="at-mx.webp" type="image/webp"/><img src="at-mx.jpg" alt="AT-MX" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="denso.webp" type="image/webp"/><img src="denso.jpg" alt="Denso" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="nidec.webp" type="image/webp"/><img src="nidec.jpg" alt="Nidec" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="baumann.webp" type="image/webp"/><img src="baumann.jpg" alt="Baumann" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="guala-dispensing.webp" type="image/webp"/><img src="guala-dispensing.jpg" alt="Guala Dispensing" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="vest-de-mexico.webp" type="image/webp"/><img src="vest-de-mexico.jpg" alt="Vest de México" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="borg-warner.webp" type="image/webp"/><img src="borg-warner.jpg" alt="BorgWarner" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="van-vien.webp" type="image/webp"/><img src="van-vien.jpg" alt="Van Vien" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="kamax.webp" type="image/webp"/><img src="kamax.jpg" alt="Kamax" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="tekfor.webp" type="image/webp"/><img src="tekfor.jpg" alt="Tekfor" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="schaeffler-de-mexico.webp" type="image/webp"/><img src="schaeffler-de-mexico.jpg" alt="Schaeffler de México" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="haldex.webp" type="image/webp"/><img src="haldex.jpg" alt="Haldex" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="grupo-modelo.webp" type="image/webp"/><img src="grupo-modelo.jpg" alt="Grupo Modelo" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="grupo-gondi.webp" type="image/webp"/><img src="grupo-gondi.jpg" alt="Grupo Gondi" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="continental-automotive.webp" type="image/webp"/><img src="continental-automotive.jpg" alt="Continental Automotive" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="centro-investigacion-optica.webp" type="image/webp"/><img src="centro-investigacion-optica.jpg" alt="Centro de Investigación en Óptica" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="lear-corporation.webp" type="image/webp"/><img src="lear-corporation.jpg" alt="Lear Corporation" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="aam-maquiladora.webp" type="image/webp"/><img src="aam-maquiladora.jpg" alt="AAM Maquiladora" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo21.webp" type="image/webp"/><img src="logo21.jpg" alt="Cliente" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo22.webp" type="image/webp"/><img src="logo22.jpg" alt="Cliente" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo23.webp" type="image/webp"/><img src="logo23.jpg" alt="Cliente" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo24.webp" type="image/webp"/><img src="logo24.jpg" alt="Cliente" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo25.webp" type="image/webp"/><img src="logo25.jpg" alt="Cliente" width="120" height="48" loading="lazy"/></picture></div>
           </div>
-
-          <!-- ── SEGUNDA COPIA (para loop continuo sin salto) ── -->
-          <div class="flex items-center gap-lg px-lg" aria-hidden="true">
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="seal-foam.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="at-mx.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="denso.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="nidec.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="baumann.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="guala-dispensing.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="vest-de-mexico.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="borg-warner.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="van-vien.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="kamax.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="tekfor.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="schaeffler-de-mexico.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="haldex.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="grupo-modelo.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="grupo-gondi.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="continental-automotive.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="centro-investigacion-optica.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="lear-corporation.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="aam-maquiladora.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo21.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo22.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo23.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo24.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
-            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo25.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+          <!-- Segunda copia (loop infinito) -->
+          <div class="logo-row" aria-hidden="true">
+            <div class="logo-item"><picture><source srcset="seal-foam.webp" type="image/webp"/><img src="seal-foam.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="at-mx.webp" type="image/webp"/><img src="at-mx.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="denso.webp" type="image/webp"/><img src="denso.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="nidec.webp" type="image/webp"/><img src="nidec.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="baumann.webp" type="image/webp"/><img src="baumann.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="guala-dispensing.webp" type="image/webp"/><img src="guala-dispensing.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="vest-de-mexico.webp" type="image/webp"/><img src="vest-de-mexico.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="borg-warner.webp" type="image/webp"/><img src="borg-warner.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="van-vien.webp" type="image/webp"/><img src="van-vien.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="kamax.webp" type="image/webp"/><img src="kamax.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="tekfor.webp" type="image/webp"/><img src="tekfor.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="schaeffler-de-mexico.webp" type="image/webp"/><img src="schaeffler-de-mexico.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="haldex.webp" type="image/webp"/><img src="haldex.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="grupo-modelo.webp" type="image/webp"/><img src="grupo-modelo.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="grupo-gondi.webp" type="image/webp"/><img src="grupo-gondi.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="continental-automotive.webp" type="image/webp"/><img src="continental-automotive.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="centro-investigacion-optica.webp" type="image/webp"/><img src="centro-investigacion-optica.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="lear-corporation.webp" type="image/webp"/><img src="lear-corporation.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="aam-maquiladora.webp" type="image/webp"/><img src="aam-maquiladora.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo21.webp" type="image/webp"/><img src="logo21.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo22.webp" type="image/webp"/><img src="logo22.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo23.webp" type="image/webp"/><img src="logo23.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo24.webp" type="image/webp"/><img src="logo24.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
+            <div class="logo-item"><picture><source srcset="logo25.webp" type="image/webp"/><img src="logo25.jpg" alt="" width="120" height="48" loading="lazy"/></picture></div>
           </div>
-
         </div>
       </div>
 
-      <!-- Industrias debajo del carrusel -->
-      <div class="flex flex-wrap items-center justify-center gap-sm mt-lg text-body-md text-on-surface-variant">
+      <div class="industry-tags">
         <span class="font-medium">Trabajamos con clientes de</span>
-        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Automotriz</span>
-        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Textil</span>
-        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Empaque</span>
-        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Agroindustria</span>
-        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Alimentos</span>
-        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Aeroespacial</span>
-        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">MRO General</span>
-        <span class="text-on-surface-variant">y más.</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SECCIÓN DE SERVICIOS (Services Grid)
-       Cuadrícula con los 6 servicios que ofrece la empresa.
-       El "id='services'" permite que el menú de navegación salte aquí.
-       ============================================================ -->
-  <section class="py-xl bg-background" id="services">
-    <div class="max-w-[1280px] mx-auto px-margin">
-
-      <!-- Encabezado de la sección: título a la izquierda, descripción a la derecha -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-xl">
-        <div class="space-y-sm">
-          <span class="text-label-mono font-label-mono text-primary-container">CAPACIDADES TÉCNICAS</span>
-          <h2 class="text-headline-lg font-headline-lg">Servicios de Manufactura Avanzada</h2>
-        </div>
-        <p class="text-body-md text-on-surface-variant max-w-md">Equipamiento de última generación para proyectos de alta complejidad y tolerancias cerradas.</p>
-      </div>
-
-      <!-- Cuadrícula de servicios: 1 columna en móvil, 2 en tablet, 3 en escritorio -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-
-        <!-- Servicio 1: CNC Vertical — tarjeta con imagen de fondo -->
-        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
-          <!-- "group-hover:opacity-80" = la imagen se aclara un poco al pasar el cursor -->
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Centro de maquinado CNC vertical de 3 y 4 ejes en León, Guanajuato" src="cnc-vertical-leon-guanajuato.jpg"/>
-          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
-            <h3 class="text-headline-md font-headline-md mb-xs">CNC Vertical</h3>
-            <p class="card-text text-on-surface-variant">Centro de maquinado de 3 y 4 ejes.</p>
-          </div>
-        </div>
-
-        <!-- Servicio 2: Torneado -->
-        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Torno CNC para piezas cilíndricas y roscados de precisión en León, Guanajuato" src="torneado-cnc-precision-leon-guanajuato.jpg"/>
-          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
-            <h3 class="text-headline-md font-headline-md mb-xs">Torneado CNC</h3>
-            <p class="card-text text-on-surface-variant">Precisión cilíndrica y roscados complejos.</p>
-          </div>
-        </div>
-
-        <!-- Servicio 3: Corte Láser -->
-        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Corte láser industrial de metales con acabados de alta precisión en León, Guanajuato" src="corte-laser-industrial-leon-guanajuato.jpg"/>
-          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
-            <h3 class="text-headline-md font-headline-md mb-xs">Corte Láser CNC</h3>
-            <p class="card-text text-on-surface-variant">Formatos de alta precisión y acabados limpios.</p>
-          </div>
-        </div>
-
-        <!-- Servicio 4: Erosionado por Hilo (Wire EDM) -->
-        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Erosionado por hilo Wire EDM para cortes geométricos complejos en metales duros" src="erosionado-hilo-wire-edm-leon-guanajuato.png"/>
-          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
-            <h3 class="text-headline-md font-headline-md mb-xs">Corte por Hilo</h3>
-            <p class="card-text text-on-surface-variant">Erosionado por hilo (Wire EDM) para cortes geométricos complejos en metales duros.</p>
-          </div>
-        </div>
-
-        <!-- Servicio 5: Fresado Convencional -->
-        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
-          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Fresado convencional para piezas auxiliares e industriales en León, Guanajuato" src="fresado-convencional-leon-guanajuato.png"/>
-          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
-            <h3 class="text-headline-md font-headline-md mb-xs">Fresado Convencional</h3>
-            <p class="card-text text-on-surface-variant">Soluciones rápidas para piezas auxiliares.</p>
-          </div>
-        </div>
-
-        <!-- Servicio 6: Tarjeta especial para proyectos personalizados (sin imagen, fondo de color) -->
-        <div class="bg-primary-container border border-primary-container aspect-video overflow-hidden flex flex-col items-center justify-center p-lg text-center gap-sm">
-          <span class="material-symbols-outlined text-on-primary text-4xl" data-icon="settings_suggest">settings_suggest</span>
-          <h4 class="text-headline-md font-headline-md text-on-primary">¿Proyecto Especial?</h4>
-          <p class="text-body-sm text-on-primary/80 mb-md">Contamos con ingeniería para diseño y fabricación a medida.</p>
-          <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest text-primary-container font-label-bold text-label-bold px-md py-xs border border-surface-container-lowest">Consultar</a>
-        </div>
-
+        <span class="industry-tag">Automotriz</span>
+        <span class="industry-tag">Textil</span>
+        <span class="industry-tag">Empaque</span>
+        <span class="industry-tag">Agroindustria</span>
+        <span class="industry-tag">Alimentos</span>
+        <span class="industry-tag">Aeroespacial</span>
+        <span class="industry-tag">MRO General</span>
+        <span style="color: var(--color-on-surface-variant)">y más.</span>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SECCIÓN DE PRODUCTOS (Products Showcase / Tooling)
-       Muestra los 4 tipos de herramentales y productos que vende.
-       El "id='tooling'" permite que el menú de navegación salte aquí.
-       ============================================================ -->
-  <section class="py-xl bg-surface-container-lowest" id="tooling">
-    <div class="max-w-[1280px] mx-auto px-margin">
-
-      <!-- Encabezado centrado de la sección -->
-      <div class="text-center mb-xl">
-        <h2 class="text-headline-lg font-headline-lg mb-sm">Especialistas en Herramentales y MRO</h2>
-        <p class="text-body-md text-on-surface-variant max-w-2xl mx-auto">Suministramos componentes críticos para mantener tu operación al 100%.</p>
+  <!-- SERVICIOS -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">CAPACIDADES TÉCNICAS</p>
+          <h2 style="font-size:32px;line-height:1.2;font-weight:600;">Servicios de Manufactura Avanzada</h2>
+        </div>
+        <p>Equipamiento de última generación para proyectos de alta complejidad y tolerancias cerradas.</p>
       </div>
 
-      <!-- Cuadrícula de 4 productos: 2 columnas en móvil, 4 en escritorio -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+      <div class="services-grid">
 
-        <!-- Producto 1: Fixtures & Jigs -->
-        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
-          <!-- Cuadro cuadrado para la imagen del producto -->
-          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
-            <img class="max-w-full h-auto object-contain" alt="Fixtures y jigs de precisión fabricados a medida para líneas de producción industriales" src="fixtures-jigs-herramentales-leon-guanajuato.png"/>
-          </div>
-          <!-- Nombre y categoría del producto debajo de la imagen -->
-          <div class="p-md bg-surface-container-low">
-            <span class="text-label-mono text-primary-container">PRODUCTO</span>
-            <h5 class="text-body-md font-label-bold">Fixtures &amp; Jigs</h5>
+        <div class="service-card">
+          <picture>
+            <source srcset="cnc-vertical-leon-guanajuato.webp" type="image/webp"/>
+            <img alt="Centro de maquinado CNC vertical de 3 y 4 ejes en León, Guanajuato" src="cnc-vertical-leon-guanajuato.jpg" loading="lazy" width="640" height="360"/>
+          </picture>
+          <div class="service-card-body">
+            <h3>CNC Vertical</h3>
+            <p>Centro de maquinado de 3 y 4 ejes.</p>
           </div>
         </div>
 
-        <!-- Producto 2: Gages & Calibradores -->
-        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
-          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
-            <img class="max-w-full h-auto object-contain" alt="Gages y calibradores de medición industrial para control de calidad dimensional" src="gages-calibradores-metrologia-industrial.png"/>
-          </div>
-          <div class="p-md bg-surface-container-low">
-            <span class="text-label-mono text-primary-container">PRECISIÓN</span>
-            <h5 class="text-body-md font-label-bold">Gages &amp; Calibradores</h5>
-          </div>
-        </div>
-
-        <!-- Producto 3: Refacciones Industriales (MRO) -->
-        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
-          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
-            <img class="max-w-full h-auto object-contain" alt="Refacciones industriales MRO para mantenimiento y reparación de maquinaria en el Bajío" src="refacciones-industriales-mro-bajio.png"/>
-          </div>
-          <div class="p-md bg-surface-container-low">
-            <span class="text-label-mono text-primary-container">MRO</span>
-            <h5 class="text-body-md font-label-bold">Refacciones Industriales</h5>
+        <div class="service-card">
+          <picture>
+            <source srcset="torneado-cnc-precision-leon-guanajuato.webp" type="image/webp"/>
+            <img alt="Torno CNC para piezas cilíndricas y roscados de precisión en León, Guanajuato" src="torneado-cnc-precision-leon-guanajuato.jpg" loading="lazy" width="640" height="360"/>
+          </picture>
+          <div class="service-card-body">
+            <h3>Torneado CNC</h3>
+            <p>Precisión cilíndrica y roscados complejos.</p>
           </div>
         </div>
 
-        <!-- Producto 4: Herramentales personalizados -->
-        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
-          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
-            <img class="max-w-full h-auto object-contain" alt="Herramentales industriales personalizados fabricados con maquinado CNC en Longoria Tooling" src="herramentales-personalizados-cnc-leon-guanajuato.png"/>
+        <div class="service-card">
+          <picture>
+            <source srcset="corte-laser-industrial-leon-guanajuato.webp" type="image/webp"/>
+            <img alt="Corte láser industrial de metales con acabados de alta precisión en León, Guanajuato" src="corte-laser-industrial-leon-guanajuato.jpg" loading="lazy" width="640" height="360"/>
+          </picture>
+          <div class="service-card-body">
+            <h3>Corte Láser CNC</h3>
+            <p>Formatos de alta precisión y acabados limpios.</p>
           </div>
-          <div class="p-md bg-surface-container-low">
-            <span class="text-label-mono text-primary-container">CUSTOM</span>
-            <h5 class="text-body-md font-label-bold">Herramentales</h5>
+        </div>
+
+        <div class="service-card">
+          <picture>
+            <source srcset="erosionado-hilo-wire-edm-leon-guanajuato.webp" type="image/webp"/>
+            <img alt="Erosionado por hilo Wire EDM para cortes geométricos complejos en metales duros" src="erosionado-hilo-wire-edm-leon-guanajuato.png" loading="lazy" width="640" height="360"/>
+          </picture>
+          <div class="service-card-body">
+            <h3>Corte por Hilo</h3>
+            <p>Erosionado por hilo (Wire EDM) para cortes geométricos complejos en metales duros.</p>
           </div>
+        </div>
+
+        <div class="service-card">
+          <picture>
+            <source srcset="fresado-convencional-leon-guanajuato.webp" type="image/webp"/>
+            <img alt="Fresado convencional para piezas auxiliares e industriales en León, Guanajuato" src="fresado-convencional-leon-guanajuato.png" loading="lazy" width="640" height="360"/>
+          </picture>
+          <div class="service-card-body">
+            <h3>Fresado Convencional</h3>
+            <p>Soluciones rápidas para piezas auxiliares.</p>
+          </div>
+        </div>
+
+        <div class="service-card-cta">
+          <span class="material-symbols-outlined icon">settings_suggest</span>
+          <h4>¿Proyecto Especial?</h4>
+          <p>Contamos con ingeniería para diseño y fabricación a medida.</p>
+          <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-cta-card">Consultar</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SECCIÓN DE CALIDAD (Quality / Metrology)
-       Muestra la certificación ISO y el laboratorio de metrología.
-       Tiene fondo con patrón de puntos (bg-grid-pattern).
-       El "id='quality'" permite que el menú de navegación salte aquí.
-       ============================================================ -->
-  <section class="py-xl border-y border-outline-variant bg-grid-pattern" id="quality">
-    <div class="max-w-[1280px] mx-auto px-margin grid lg:grid-cols-2 gap-xl items-center">
-
-      <!-- Columna izquierda: texto y lista de características de calidad -->
-      <div class="space-y-lg">
-        <h2 class="text-headline-lg font-headline-lg">Cultura de Calidad ISO 9001:2015</h2>
-        <p class="text-body-lg text-on-surface-variant">Con más de 25 años en el mercado, nuestra garantía no es solo una palabra, es un proceso documentado. Cada pieza pasa por nuestro laboratorio de Metrología.</p>
-
-        <!-- Lista de tres puntos de calidad, cada uno con ícono, título y descripción -->
-        <ul class="space-y-md">
-
-          <!-- Punto 1: Reportes dimensionales -->
-          <li class="flex items-start gap-md">
-            <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="check_circle">check_circle</span>
-            <div>
-              <h6 class="font-bold">Reportes Dimensionales</h6>
-              <p class="card-text text-on-surface-variant">Documentación técnica incluida en cada entrega crítica.</p>
-            </div>
-          </li>
-
-          <!-- Punto 2: Laboratorio de Metrología -->
-          <li class="flex items-start gap-md">
-            <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="architecture">architecture</span>
-            <div>
-              <h6 class="font-bold">Laboratorio de Metrología</h6>
-              <p class="card-text text-on-surface-variant">CMM y equipos de medición certificados.</p>
-            </div>
-          </li>
-
-          <!-- Punto 3: Gestión de cumplimiento -->
-          <li class="flex items-start gap-md">
-            <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="factory">factory</span>
-            <div>
-              <h6 class="font-bold">Gestión de Cumplimiento</h6>
-              <p class="card-text text-on-surface-variant">Alineados a los estándares de la industria automotriz y aeroespacial del Bajío.</p>
-            </div>
-          </li>
-
-        </ul>
+  <!-- TOOLING -->
+  <section class="tooling-section" id="tooling">
+    <div class="container">
+      <div class="section-header" style="flex-direction:column;align-items:center;text-align:center;">
+        <h2 style="font-size:32px;line-height:1.2;font-weight:600;">Especialistas en Herramentales y MRO</h2>
+        <p style="max-width:672px;text-align:center;font-size:16px;line-height:1.6;color:var(--color-on-surface-variant);">Suministramos componentes críticos para mantener tu operación al 100%.</p>
       </div>
 
-      <!-- Columna derecha: imagen del laboratorio con borde decorativo -->
-      <div class="relative">
-        <!-- Borde decorativo detrás de la imagen -->
-        <div class="absolute -inset-4 bg-primary-container/5 border border-primary-container/10"></div>
-        <!-- Imagen del laboratorio de metrología -->
-        <img class="relative z-10 w-full border border-outline-variant shadow-xl" alt="Laboratorio de metrología con equipo CMM certificado en Longoria Tooling, León Guanajuato" src="laboratorio-metrologia-longoria-tooling.jpg"/>
-      </div>
+      <div class="tooling-grid">
 
+        <div class="tooling-card">
+          <div class="tooling-img-wrap">
+            <picture>
+              <source srcset="fixtures-jigs-herramentales-leon-guanajuato.webp" type="image/webp"/>
+              <img alt="Fixtures y jigs de precisión fabricados a medida para líneas de producción industriales" src="fixtures-jigs-herramentales-leon-guanajuato.png" loading="lazy" width="200" height="200"/>
+            </picture>
+          </div>
+          <div class="tooling-info">
+            <span class="tooling-label">PRODUCTO</span>
+            <h5>Fixtures &amp; Jigs</h5>
+          </div>
+        </div>
+
+        <div class="tooling-card">
+          <div class="tooling-img-wrap">
+            <picture>
+              <source srcset="gages-calibradores-metrologia-industrial.webp" type="image/webp"/>
+              <img alt="Gages y calibradores de medición industrial para control de calidad dimensional" src="gages-calibradores-metrologia-industrial.png" loading="lazy" width="200" height="200"/>
+            </picture>
+          </div>
+          <div class="tooling-info">
+            <span class="tooling-label">PRECISIÓN</span>
+            <h5>Gages &amp; Calibradores</h5>
+          </div>
+        </div>
+
+        <div class="tooling-card">
+          <div class="tooling-img-wrap">
+            <picture>
+              <source srcset="refacciones-industriales-mro-bajio.webp" type="image/webp"/>
+              <img alt="Refacciones industriales MRO para mantenimiento y reparación de maquinaria en el Bajío" src="refacciones-industriales-mro-bajio.png" loading="lazy" width="200" height="200"/>
+            </picture>
+          </div>
+          <div class="tooling-info">
+            <span class="tooling-label">MRO</span>
+            <h5>Refacciones Industriales</h5>
+          </div>
+        </div>
+
+        <div class="tooling-card">
+          <div class="tooling-img-wrap">
+            <picture>
+              <source srcset="herramentales-personalizados-cnc-leon-guanajuato.webp" type="image/webp"/>
+              <img alt="Herramentales industriales personalizados fabricados con maquinado CNC en Longoria Tooling" src="herramentales-personalizados-cnc-leon-guanajuato.png" loading="lazy" width="200" height="200"/>
+            </picture>
+          </div>
+          <div class="tooling-info">
+            <span class="tooling-label">CUSTOM</span>
+            <h5>Herramentales</h5>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       SECCIÓN DE CONTACTO — WhatsApp directo
-       ============================================================ -->
-  <section class="py-xl bg-background overflow-hidden">
-    <div class="max-w-[800px] mx-auto px-margin">
+  <!-- CALIDAD -->
+  <section class="quality-section" id="quality">
+    <div class="container">
+      <div class="quality-grid">
 
-      <div class="bg-primary-container p-xl border border-primary/20 space-y-lg rounded text-center">
-        <h2 class="text-headline-lg font-headline-lg text-on-primary">¿Tienes una urgencia?</h2>
-        <p class="text-body-lg text-on-primary/80 max-w-lg mx-auto">Escríbenos directo por WhatsApp. Nuestro equipo de ingeniería responde en menos de 24 horas hábiles y está listo para analizar tus planos.</p>
+        <div class="quality-text">
+          <h2>Cultura de Calidad ISO 9001:2015</h2>
+          <p>Con más de 25 años en el mercado, nuestra garantía no es solo una palabra, es un proceso documentado. Cada pieza pasa por nuestro laboratorio de Metrología.</p>
 
-        <!-- Botón principal de WhatsApp -->
-        <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-md bg-[#25D366] text-white font-bold text-lg px-xl py-md rounded active:scale-95 transition-transform duration-150 shadow-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 shrink-0">
+          <ul class="quality-list">
+            <li class="quality-item">
+              <span class="material-symbols-outlined icon">check_circle</span>
+              <div>
+                <h6>Reportes Dimensionales</h6>
+                <p>Documentación técnica incluida en cada entrega crítica.</p>
+              </div>
+            </li>
+            <li class="quality-item">
+              <span class="material-symbols-outlined icon">architecture</span>
+              <div>
+                <h6>Laboratorio de Metrología</h6>
+                <p>CMM y equipos de medición certificados.</p>
+              </div>
+            </li>
+            <li class="quality-item">
+              <span class="material-symbols-outlined icon">factory</span>
+              <div>
+                <h6>Gestión de Cumplimiento</h6>
+                <p>Alineados a los estándares de la industria automotriz y aeroespacial del Bajío.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="quality-img-wrap">
+          <div class="quality-img-deco"></div>
+          <picture>
+            <source srcset="laboratorio-metrologia-longoria-tooling.webp" type="image/webp"/>
+            <img alt="Laboratorio de metrología con equipo CMM certificado en Longoria Tooling, León Guanajuato" src="laboratorio-metrologia-longoria-tooling.jpg" loading="lazy" width="640" height="480"/>
+          </picture>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact-section">
+    <div class="container" style="max-width:800px;">
+      <div class="contact-box">
+        <h2>¿Tienes una urgencia?</h2>
+        <p>Escríbenos directo por WhatsApp. Nuestro equipo de ingeniería responde en menos de 24 horas hábiles y está listo para analizar tus planos.</p>
+
+        <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
           </svg>
           Cotizar por WhatsApp
         </a>
 
-        <!-- Datos de contacto secundarios -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-lg pt-md text-on-primary/80 text-body-sm">
-          <div class="flex items-center gap-sm">
-            <span class="material-symbols-outlined text-base" data-icon="call">call</span>
-            <a href="tel:+524772172542" class="hover:text-on-primary transition-colors">477 217 2542</a>
+        <div class="contact-meta">
+          <div class="contact-meta-item">
+            <span class="material-symbols-outlined icon">call</span>
+            <a href="tel:+524772172542">477 217 2542</a>
           </div>
-          <div class="flex items-center gap-sm">
-            <span class="material-symbols-outlined text-base" data-icon="mail">mail</span>
-            <a href="mailto:ventas@longoriatm.com.mx" class="hover:text-on-primary transition-colors">ventas@longoriatm.com.mx</a>
+          <div class="contact-meta-item">
+            <span class="material-symbols-outlined icon">mail</span>
+            <a href="mailto:ventas@longoriatm.com.mx">ventas@longoriatm.com.mx</a>
           </div>
-          <div class="flex items-center gap-sm">
-            <span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+          <div class="contact-meta-item">
+            <span class="material-symbols-outlined icon">location_on</span>
             <span>León, Guanajuato, México</span>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ============================================================
-       SECCIÓN DE COBERTURA GEOGRÁFICA (Local Context / Map Area)
-       Muestra la ubicación estratégica de León y los tiempos
-       de entrega a otras ciudades del Bajío.
-       ============================================================ -->
-  <section class="bg-surface-container-low py-xl">
-    <div class="max-w-[1280px] mx-auto px-margin flex flex-col md:flex-row items-center gap-xl">
+  <!-- COBERTURA -->
+  <section class="coverage-section">
+    <div class="container">
+      <div class="coverage-inner">
 
-      <!-- Columna izquierda: texto con distancias a ciudades clave -->
-      <div class="flex-1 space-y-md">
-        <h2 class="text-headline-lg font-headline-lg">Cobertura Industrial en todo el Bajío</h2>
-        <p class="text-body-md text-on-surface-variant">Desde nuestra planta en <strong>León, Guanajuato</strong>, atendemos urgencias de maquinado CNC y corte láser para los principales parques industriales de la región:</p>
+        <div class="coverage-text">
+          <h2>Cobertura Industrial en todo el Bajío</h2>
+          <p>Desde nuestra planta en <strong>León, Guanajuato</strong>, atendemos urgencias de maquinado CNC y corte láser para los principales parques industriales de la región:</p>
 
-        <ul class="space-y-sm text-body-sm text-on-surface-variant">
-          <li><strong class="text-on-surface">Silao — Puerto Interior:</strong> Servicio de maquinado de precisión a 20 minutos para plantas automotrices y de autopartes.</li>
-          <li><strong class="text-on-surface">Irapuato — Parque Industrial Castro del Río:</strong> Refacciones y herramentales entregados en menos de 45 minutos.</li>
-          <li><strong class="text-on-surface">Salamanca — Zona Industrial:</strong> Soporte a plantas petroquímicas y de manufactura general.</li>
-          <li><strong class="text-on-surface">Celaya y Querétaro:</strong> Entregas programadas con tiempos de respuesta competitivos para el corredor industrial.</li>
-        </ul>
+          <ul class="coverage-list">
+            <li><strong>Silao — Puerto Interior:</strong> Servicio de maquinado de precisión a 20 minutos para plantas automotrices y de autopartes.</li>
+            <li><strong>Irapuato — Parque Industrial Castro del Río:</strong> Refacciones y herramentales entregados en menos de 45 minutos.</li>
+            <li><strong>Salamanca — Zona Industrial:</strong> Soporte a plantas petroquímicas y de manufactura general.</li>
+            <li><strong>Celaya y Querétaro:</strong> Entregas programadas con tiempos de respuesta competitivos para el corredor industrial.</li>
+          </ul>
 
-        <div class="flex flex-wrap gap-md pt-sm">
-          <span class="px-md py-1 border border-outline-variant text-label-mono text-primary-container">SILAO: 20 MIN</span>
-          <span class="px-md py-1 border border-outline-variant text-label-mono text-primary-container">IRAPUATO: 45 MIN</span>
-          <span class="px-md py-1 border border-outline-variant text-label-mono text-primary-container">QUERÉTARO: 1.5 HR</span>
+          <div class="coverage-tags">
+            <span class="coverage-tag">SILAO: 20 MIN</span>
+            <span class="coverage-tag">IRAPUATO: 45 MIN</span>
+            <span class="coverage-tag">QUERÉTARO: 1.5 HR</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Columna derecha: imagen del mapa regional -->
-      <div class="w-full md:w-1/2 aspect-video bg-surface-container border border-outline-variant overflow-hidden rounded">
-        <img class="w-full h-full object-cover" alt="Mapa de cobertura de maquinado CNC en el Bajío: León, Silao, Irapuato, Salamanca, Celaya, Querétaro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_UxdhAK93216eAZVxaIpL9CwvF1JvyaArh0twXvzPEkqZ3WGAOZv7WyVZo9eprHW1216VtxDd2ygbms-NEWhkJ3EqHqUxDlB8nxLa8vuuTFeZOal1-Zc495kWXV8ZvCD84YeFezIHoBXDTFRz_dbqz-oU_RNYKM9rqqto7xedk05cJ-Fw7W5kCyx5i1WKOmQMwNyb5RczQhuzuZJplEUXzvJO37HvSZDXcYiXXNsL0zgAs8wOlggXI5cupGbRMArVKef9Jlrmx1BQ"/>
-      </div>
+        <div class="coverage-map">
+          <img alt="Mapa de cobertura de maquinado CNC en el Bajío: León, Silao, Irapuato, Salamanca, Celaya, Querétaro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_UxdhAK93216eAZVxaIpL9CwvF1JvyaArh0twXvzPEkqZ3WGAOZv7WyVZo9eprHW1216VtxDd2ygbms-NEWhkJ3EqHqUxDlB8nxLa8vuuTFeZOal1-Zc495kWXV8ZvCD84YeFezIHoBXDTFRz_dbqz-oU_RNYKM9rqqto7xedk05cJ-Fw7W5kCyx5i1WKOmQMwNyb5RczQhuzuZJplEUXzvJO37HvSZDXcYiXXNsL0zgAs8wOlggXI5cupGbRMArVKef9Jlrmx1BQ" loading="lazy" width="640" height="360"/>
+        </div>
 
+      </div>
     </div>
   </section>
 
 </main>
 
 <!-- ============================================================
-     PIE DE PÁGINA (Footer)
-     Sección final con información de la empresa, navegación
-     secundaria, datos de contacto y derechos de autor.
+     FOOTER
      ============================================================ -->
-<footer class="bg-surface-container-lowest border-t border-outline-variant">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-xl px-margin py-xl w-full max-w-[1280px] mx-auto">
+<footer class="site-footer">
+  <div class="footer-grid">
 
-    <!-- Columna 1: marca y descripción -->
-    <div class="space-y-lg">
-      <div class="text-headline-md font-bold text-primary">LONGORIA TOOLING</div>
-      <p class="text-body-sm text-on-surface-variant max-w-sm">Maquinados CNC y corte láser industrial con precisión garantizada para la industria manufacturera del Bajío.</p>
-      <div class="text-label-mono text-primary uppercase font-bold">ISO 9001:2015</div>
+    <div class="footer-brand">
+      <div class="footer-brand-name">LONGORIA TOOLING</div>
+      <p>Maquinados CNC y corte láser industrial con precisión garantizada para la industria manufacturera del Bajío.</p>
+      <div class="footer-iso">ISO 9001:2015</div>
     </div>
 
-    <!-- Columna 2: navegación -->
-    <div class="space-y-md">
-      <h6 class="text-label-bold font-label-bold text-on-surface">NAVEGACIÓN</h6>
-      <ul class="space-y-sm">
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#services">Servicios</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#tooling">Especialidades</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#quality">Calidad</a></li>
+    <div class="footer-nav">
+      <h6>NAVEGACIÓN</h6>
+      <ul>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#tooling">Especialidades</a></li>
+        <li><a href="#quality">Calidad</a></li>
       </ul>
     </div>
 
-    <!-- Columna 3: contacto -->
-    <div class="space-y-md">
-      <h6 class="text-label-bold font-label-bold text-on-surface">CONTACTO</h6>
-      <ul class="space-y-sm">
-        <li class="text-on-surface-variant text-body-sm">León, Guanajuato, México</li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="tel:+524772172542">477 217 2542</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="mailto:ventas@longoriatm.com.mx">ventas@longoriatm.com.mx</a></li>
+    <div class="footer-contact">
+      <h6>CONTACTO</h6>
+      <ul>
+        <li>León, Guanajuato, México</li>
+        <li><a href="tel:+524772172542">477 217 2542</a></li>
+        <li><a href="mailto:ventas@longoriatm.com.mx">ventas@longoriatm.com.mx</a></li>
         <li>
-          <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-xs text-[#25D366] font-bold text-body-sm hover:opacity-80 transition-opacity">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="footer-wa">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             WhatsApp
           </a>
         </li>
@@ -814,11 +1859,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </div>
 
-  <!-- Barra de derechos de autor -->
-  <div class="max-w-[1280px] mx-auto px-margin py-md border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between gap-sm">
-    <p class="text-label-mono text-on-surface-variant/60">© 2025 LONGORIA TOOLING. TODOS LOS DERECHOS RESERVADOS.</p>
-    <p class="text-label-mono text-on-surface-variant/60">LEÓN, GUANAJUATO</p>
+  <div class="footer-bottom">
+    <p>© 2025 LONGORIA TOOLING. TODOS LOS DERECHOS RESERVADOS.</p>
+    <p>LEÓN, GUANAJUATO</p>
   </div>
 </footer>
 
-</body></html>
+</body>
+</html>

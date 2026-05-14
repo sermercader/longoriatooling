@@ -1,0 +1,824 @@
+﻿<!DOCTYPE html>
+<!-- DOCTYPE le dice al navegador que este es un archivo HTML moderno -->
+
+<!-- La etiqueta <html> es el contenedor de toda la página. "lang=es" indica que el idioma es español.
+     La clase "light" activa el tema claro de colores. -->
+<html class="light" lang="es"><head>
+
+<!-- ============================================================
+     CABECERA DEL DOCUMENTO (no es visible en la página)
+     Aquí se configuran cosas técnicas que el navegador necesita
+     antes de mostrar la página al usuario.
+     ============================================================ -->
+
+<!-- Le dice al navegador qué tipo de caracteres usar (UTF-8 permite acentos y ñ) -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZXJN2ND');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"/>
+
+<!-- Hace que la página se vea bien en celulares ajustando el tamaño automáticamente -->
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<!-- El título que aparece en la pestaña del navegador y en Google -->
+<title>Maquinados CNC y Corte Láser Industrial en León | Estándares ISO 9001 | Longoria Tooling</title>
+
+<!-- ── SEO BÁSICO ─────────────────────────────────────────────────────────── -->
+
+<!-- Descripción que Google muestra debajo del título en los resultados de búsqueda.
+     Ideal entre 150-160 caracteres. -->
+<meta name="description" content="Maquinados CNC y Corte láser industrial de metales en León, Gto. Procesos alineados a estándares ISO 9001. Cotización en menos de 24h y entregas en 8 días hábiles para el Bajío."/>
+
+<!-- Le dice a Google que sí puede indexar esta página y seguir sus enlaces -->
+<meta name="robots" content="index, follow"/>
+
+<!-- URL oficial de la página (evita que Google cuente versiones duplicadas como error) -->
+<link rel="canonical" href="https://longoriatm.com.mx/cotiza/"/>
+
+<!-- ── OPEN GRAPH (cómo se ve al compartir en WhatsApp, Facebook, LinkedIn) ── -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="es_MX"/>
+<meta property="og:url" content="https://longoriatm.com.mx/cotiza/"/>
+<meta property="og:title" content="Maquinados CNC y Corte Láser Industrial en León | Longoria Tooling"/>
+<meta property="og:description" content="Precisión industrial bajo estándares ISO 9001. Cotización en 24h. Especialistas en herramentales y MRO para la industria del Bajío."/>
+<!-- Imagen que aparece al compartir el link (reemplaza con la URL real de tu imagen) -->
+<meta property="og:image" content="https://longoriatm.com.mx/cotiza/maquinado-cnc-precision-leon-guanajuato.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+
+<link rel="icon" type="image/png" href="favicon.png"/>
+
+<!-- ── DATOS ESTRUCTURADOS (JSON-LD) ─────────────────────────────────────── -->
+<!-- Esto le dice a Google exactamente qué tipo de negocio es, dónde está y cómo contactarlo.
+     Puede generar un "rich result" (ficha especial) en los resultados de búsqueda. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ManufacturingBusiness",
+  "name": "Longoria Tooling",
+  "description": "Planta de manufactura especializada en maquinados CNC de precisión y corte láser industrial para metales. Operando bajo estándares de calidad ISO 9001 para la industria del Bajío.",
+  "url": "https://longoriatm.com.mx/cotiza/",
+  "telephone": "+52-477-217-2542",
+  "email": "ventas@longoriatm.com.mx",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Tu Dirección Real]",
+    "addressLocality": "León",
+    "addressRegion": "Guanajuato",
+    "postalCode": "[Código Postal]",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "21.1221",
+    "longitude": "-101.6824"
+  },
+  "areaServed": ["León", "Silao", "Irapuato", "Salamanca", "Celaya", "Querétaro"],
+  "knowsAbout": [
+    "Maquinado de precisión CNC",
+    "Corte láser de metal",
+    "Manufactura de herramentales",
+    "MRO Industrial",
+    "Estándares ISO 9001"
+  ]
+}
+</script>
+
+<!-- Carga Tailwind CSS: una biblioteca que nos da clases de estilos ya hechas
+     para no tener que escribir todo el diseño desde cero -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- Carga la fuente tipográfica "IBM Plex Sans" desde Google Fonts (la letra que se ve en la página) -->
+<!-- ital,wght@0,... = versión normal | 1,... = versión itálica | cada número es un peso (400=regular, 500=medium, 600=semibold, 700=bold) -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+
+<!-- Carga los iconos de Material Symbols (los íconos de Google como el teléfono, reloj, etc.) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<style>
+        /* Configuración de los íconos: grosor y tamaño normal */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Texto de las tarjetas — cambia font-size aquí para afectar todas a la vez */
+        .card-text {
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* Patrón de puntos grises que se usa de fondo en la sección de calidad */
+        .bg-grid-pattern {
+            background-image: radial-gradient(circle, #c4c6cc 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Carrusel de logos — scroll infinito automático */
+        .logo-track {
+            display: flex;
+            width: max-content;
+            animation: logo-scroll 55s linear infinite;
+        }
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes logo-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+    </style>
+
+<!-- ============================================================
+     CONFIGURACIÓN DE COLORES Y TAMAÑOS
+     Aquí se definen todos los colores de la marca y los tamaños
+     de texto que se usan en toda la página.
+     ============================================================ -->
+<script id="tailwind-config">
+      tailwind.config = {
+        /* "darkMode: class" significa que el modo oscuro se activa poniendo una clase en el HTML */
+        darkMode: "class",
+        theme: {
+          extend: {
+            /* PALETA DE COLORES — cada nombre es un color que se usa en la página */
+            "colors": {
+                    "on-primary-fixed": "#0c1d2b",        /* texto sobre fondo azul claro fijo */
+                    "surface-variant": "#e0e3e5",          /* superficie alternativa gris claro */
+                    "inverse-primary": "#b8c8dc",          /* primario invertido (para fondos oscuros) */
+                    "surface-container-low": "#f2f4f6",    /* contenedor con fondo muy claro */
+                    "secondary": "#545f72",                /* color secundario, gris azulado */
+                    "on-primary": "#ffffff",               /* texto blanco que va sobre el color primario */
+                    "primary-fixed": "#d3e4f8",            /* versión fija del color primario (azul muy claro) */
+                    "on-error": "#ffffff",                 /* texto blanco sobre color de error */
+                    "tertiary-fixed-dim": "#b6c4ff",       /* terciario fijo más oscuro */
+                    "tertiary-container": "#002171",       /* contenedor del color terciario (azul marino) */
+                    "on-primary-fixed-variant": "#384858", /* texto sobre variante fija primaria */
+                    "on-tertiary-fixed-variant": "#0039b3",/* texto sobre variante terciaria fija */
+                    "secondary-container": "#d5e0f7",      /* contenedor del color secundario */
+                    "surface-container-highest": "#e0e3e5",/* contenedor más oscuro de superficie */
+                    "on-tertiary-container": "#1B2B3A",    /* texto sobre contenedor terciario */
+                    "surface-bright": "#f7f9fb",           /* superficie brillante/clara */
+                    "on-secondary-fixed-variant": "#3c475a",/* texto sobre variante secundaria fija */
+                    "outline": "#74777c",                  /* color de bordes y líneas */
+                    "on-background": "#191c1e",            /* texto sobre fondo principal */
+                    "secondary-fixed-dim": "#bcc7dd",      /* secundario fijo más tenue */
+                    "on-error-container": "#93000a",       /* texto oscuro sobre contenedor de error */
+                    "tertiary": "#001042",                 /* color terciario (azul muy oscuro) */
+                    "secondary-fixed": "#d8e3fa",          /* secundario fijo */
+                    "outline-variant": "#c4c6cc",          /* bordes más sutiles */
+                    "primary-fixed-dim": "#b8c8dc",        /* primario fijo más tenue */
+                    "error": "#ba1a1a",                    /* color rojo para errores */
+                    "surface-container": "#eceef0",        /* fondo de tarjetas/contenedores */
+                    "surface": "#f7f9fb",                  /* color de superficie principal */
+                    "inverse-on-surface": "#eff1f3",       /* texto sobre superficie invertida */
+                    "error-container": "#ffdad6",          /* fondo para mensajes de error */
+                    "on-secondary-container": "#586377",   /* texto sobre contenedor secundario */
+                    "inverse-surface": "#2d3133",          /* superficie invertida (modo oscuro) */
+                    "on-surface-variant": "#43474c",       /* texto secundario sobre superficie */
+                    "on-primary-container": "#8292a5",     /* texto sobre contenedor primario */
+                    "tertiary-fixed": "#dce1ff",           /* terciario fijo (lila claro) */
+                    "background": "#f7f9fb",               /* color de fondo general de la página */
+                    "surface-container-lowest": "#ffffff", /* blanco puro — el más claro */
+                    "surface-container-high": "#e6e8ea",   /* contenedor algo más oscuro */
+                    "surface-tint": "#506071",             /* tinte sobre superficies */
+                    "on-tertiary": "#ffffff",              /* texto blanco sobre terciario */
+                    "on-secondary": "#ffffff",             /* texto blanco sobre secundario */
+                    "on-surface": "#191c1e",               /* texto principal oscuro */
+                    "primary-container": "#1b2b3a",        /* contenedor azul marino oscuro (color de marca) */
+                    "surface-dim": "#d8dadc",              /* superficie atenuada */
+                    "on-secondary-fixed": "#111c2c",       /* texto oscuro sobre secundario fijo */
+                    "on-tertiary-fixed": "#001551",        /* texto sobre terciario fijo */
+                    "primary": "#051625"                   /* color primario principal (azul casi negro) */
+            },
+            /* BORDES REDONDEADOS — qué tan redondas son las esquinas de los elementos */
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",  /* borde predeterminado: muy poco redondeado */
+                    "lg": "0.25rem",        /* grande: un poco más redondeado */
+                    "xl": "0.5rem",         /* extra grande */
+                    "full": "0.75rem"       /* completamente redondeado */
+            },
+            /* ESPACIADOS — distancias entre elementos */
+            "spacing": {
+                    "sm": "8px",       /* pequeño: 8 píxeles */
+                    "xs": "4px",       /* extra pequeño: 4 píxeles */
+                    "gutter": "24px",  /* espacio entre columnas */
+                    "md": "16px",      /* mediano: 16 píxeles */
+                    "lg": "24px",      /* grande: 24 píxeles */
+                    "unit": "4px",     /* unidad base */
+                    "xl": "40px",      /* extra grande: 40 píxeles */
+                    "margin": "32px"   /* margen lateral de la página */
+            },
+            /* TIPOGRAFÍA — familias de fuentes por tipo de texto */
+            "fontFamily": {
+                    "headline-md": ["IBM Plex Sans"],   /* titular mediano — fuente monoespaciada */
+                    "body-sm": ["IBM Plex Sans"],       /* cuerpo de texto pequeño — fuente sans */
+                    "label-bold": ["IBM Plex Sans"],    /* etiqueta en negritas — fuente monoespaciada */
+                    "headline-xl": ["IBM Plex Sans"],   /* titular extra grande — fuente monoespaciada */
+                    "body-md": ["IBM Plex Sans"],       /* cuerpo de texto mediano — fuente sans */
+                    "body-lg": ["IBM Plex Sans"],       /* cuerpo de texto grande — fuente sans */
+                    "headline-lg": ["IBM Plex Sans"],   /* titular grande — fuente monoespaciada */
+                    "label-mono": ["IBM Plex Sans"]     /* etiqueta monoespaciada — fuente monoespaciada */
+            },
+            /* TAMAÑOS DE TEXTO — tamaño, altura de línea y peso de cada tipo */
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-mono": ["13px", {"lineHeight": "1", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+
+<!-- ============================================================
+     CUERPO DE LA PÁGINA — todo lo que el usuario puede ver
+     "bg-background" = color de fondo, "text-on-surface" = color del texto principal
+     "overflow-x-hidden" = evita que aparezca barra de desplazamiento horizontal
+     ============================================================ -->
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZXJN2ND"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ============================================================
+     BARRA DE NAVEGACIÓN SUPERIOR (TopAppBar)
+     Se queda fija en la parte de arriba aunque el usuario haga scroll.
+     "sticky z-50" = pegada arriba con prioridad visual alta
+     ============================================================ -->
+<header class="bg-surface-container-lowest border-b border-outline-variant docked full-width top-0 sticky z-50 transition-all duration-200">
+  <div class="flex justify-between items-center px-margin py-sm w-full max-w-[1280px] mx-auto">
+
+    <!-- Logo + nombre -->
+    <a href="#" class="flex items-center gap-sm">
+      <img src="favicon.png" alt="Longoria Tooling" class="h-10 w-auto object-contain"/>
+      <span class="text-headline-md font-headline-md font-bold tracking-tighter text-primary">LONGORIA TOOLING</span>
+    </a>
+
+    <!-- Menú de navegación — solo visible en pantallas medianas y grandes ("hidden md:flex") -->
+    <nav class="hidden md:flex items-center gap-lg">
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#services">Servicios</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#tooling">Especialidades</a>
+      <a class="text-on-surface-variant hover:text-primary transition-all duration-200 text-label-bold font-label-bold" href="#quality">Calidad</a>
+    </nav>
+
+    <!-- Botones de acción en el lado derecho del menú -->
+    <div class="flex items-center gap-md">
+      <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-primary-container text-on-primary px-lg py-xs font-label-bold text-label-bold active:scale-95 transition-transform duration-150 rounded">
+        Cotizar Ahora
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============================================================
+     CONTENIDO PRINCIPAL DE LA PÁGINA
+     Todo el contenido visible entre el menú y el pie de página
+     ============================================================ -->
+<main>
+
+  <!-- ============================================================
+       SECCIÓN HERO (Banner principal)
+       Es la primera sección grande que el usuario ve al entrar.
+       Tiene una imagen de fondo, un título, descripción y botones.
+       ============================================================ -->
+  <section class="relative min-h-[700px] flex items-center overflow-hidden border-b border-outline-variant">
+
+    <!-- Imagen de fondo con degradado encima para que el texto sea legible -->
+    <div class="absolute inset-0 z-0">
+      <!-- Degradado: va de opaco a la izquierda a transparente a la derecha,
+           así el texto del lado izquierdo es legible sobre la imagen -->
+      <div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+      <!-- Imagen de una máquina CNC de 5 ejes -->
+      <img class="w-full h-full object-cover" alt="Maquinado CNC de precisión en taller industrial de Longoria Tooling en León, Guanajuato" src="maquinado-cnc-precision-leon-guanajuato.jpg"/>
+    </div>
+
+    <!-- Contenido del hero: título, descripción y botones (por encima de la imagen) -->
+    <div class="relative z-20 w-full max-w-[1280px] mx-auto px-margin py-xl grid lg:grid-cols-2 gap-xl items-center">
+      <div class="space-y-lg">
+
+        <!-- Etiqueta pequeña de localización -->
+        <div class="inline-flex items-center gap-sm bg-primary-fixed px-sm py-1 border border-primary text-on-primary-fixed">
+          <span class="w-2 h-2 bg-primary-container"></span>
+          <span class="text-label-bold font-label-bold uppercase tracking-wider">Atendemos todo el Bajío</span>
+        </div>
+
+        <!-- Título principal (H1 — el más importante de la página para Google) -->
+        <h1 class="text-headline-xl font-headline-xl text-on-surface max-w-xl">
+                    Maquinados de Precisión en León: <span class="text-primary-container">Certeza</span> en Entrega y Calidad ISO.
+                </h1>
+
+        <!-- Subtítulo descriptivo -->
+        <p class="text-body-lg font-body-lg font-medium text-on-surface-variant max-w-lg">
+                    Cotizamos en menos de 24 horas. Entregas en 8 días hábiles. Resolvemos tus urgencias de MRO y Herramentales con precisión milimétrica.
+                </p>
+
+        <!-- Dos botones de llamada a la acción -->
+        <div class="flex flex-col sm:flex-row gap-md">
+          <!-- Botón principal (más prominente) -->
+          <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="bg-primary-container text-on-primary font-bold text-base px-xl py-md border border-primary-container active:scale-95 transition-transform duration-150 shadow-lg text-center">
+            Solicitar Cotización Ahora
+          </a>
+          <a href="#services" class="bg-transparent text-on-surface font-label-bold text-label-bold px-xl py-md border border-outline hover:bg-surface-container-high transition-all duration-200 text-center">
+            Ver Capacidades
+          </a>
+        </div>
+
+        <!-- Tres estadísticas clave separadas por líneas verticales -->
+        <div class="flex items-center gap-lg pt-md">
+          <div class="flex flex-col">
+            <span class="text-headline-md font-headline-md text-on-surface">25+</span>
+            <span class="text-label-mono font-label-mono text-on-surface-variant">AÑOS EXP.</span>
+          </div>
+          <!-- Línea divisora vertical -->
+          <div class="w-px h-10 bg-outline-variant"></div>
+          <div class="flex flex-col">
+            <span class="text-headline-md font-headline-md text-on-surface">&lt;24h</span>
+            <span class="text-label-mono font-label-mono text-on-surface-variant">COTIZACIÓN</span>
+          </div>
+          <div class="w-px h-10 bg-outline-variant"></div>
+          <div class="flex flex-col">
+            <span class="text-headline-md font-headline-md text-on-surface">&lt;8 DÍAS</span>
+            <span class="text-label-mono font-label-mono text-on-surface-variant">PROMEDIO DE ENTREGA</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE VENTAJAS RÁPIDAS (Pain Points / Quick Solution)
+       Tres tarjetas que muestran los beneficios principales.
+       "md:grid-cols-3" = 3 columnas en pantallas medianas/grandes
+       ============================================================ -->
+  <section class="bg-surface-container-low py-xl border-b border-outline-variant">
+    <div class="max-w-[1280px] mx-auto px-margin">
+      <div class="grid md:grid-cols-3 gap-lg">
+
+        <!-- Tarjeta 1: Respuesta rápida -->
+        <div class="p-lg bg-surface-container-lowest border border-outline-variant space-y-md">
+          <!-- Ícono de reloj -->
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="timer">timer</span>
+          <h3 class="text-headline-md font-headline-md">Respuesta Inmediata</h3>
+          <p class="text-body-md text-on-surface-variant">Entendemos tu urgencia: Evita paros de línea con nuestra capacidad de respuesta rápida en &lt;24h.</p>
+        </div>
+
+        <!-- Tarjeta 2: Calidad garantizada -->
+        <div class="p-lg bg-surface-container-lowest border border-outline-variant space-y-md">
+          <!-- Ícono de verificación/palomita -->
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="verified">verified</span>
+          <h3 class="text-headline-md font-headline-md">Certeza Total</h3>
+          <p class="text-body-md text-on-surface-variant">Protocolos de inspección rigurosos que garantizan que la pieza llegue correcta a la primera.</p>
+        </div>
+
+        <!-- Tarjeta 3: Entregas rápidas -->
+        <div class="p-lg bg-surface-container-lowest border border-outline-variant space-y-md">
+          <!-- Ícono de camión de entrega -->
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="local_shipping">local_shipping</span>
+          <h3 class="text-headline-md font-headline-md">Entregas en 8 Días</h3>
+          <p class="text-body-md text-on-surface-variant">Logística optimizada para el Bajío. Cumplimos con tus cronogramas de mantenimiento y producción.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE PRUEBA SOCIAL — Logos de clientes
+       Muestra confianza: si grandes empresas confían en nosotros,
+       el visitante también puede confiar.
+       ============================================================ -->
+  <section class="py-xl bg-surface-container-lowest border-b border-outline-variant">
+    <div class="max-w-[1280px] mx-auto px-margin">
+
+      <!-- Título de la sección -->
+      <h2 class="text-center text-headline-lg font-headline-lg text-on-surface mb-md">Empresas que confían en nosotros</h2>
+
+      <!-- Párrafo de autoridad -->
+      <p class="text-center text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-xl">Más de 25 años respaldando operaciones industriales en el Bajío. Nuestros clientes nos eligen porque saben que cada pieza llega correcta, a tiempo y documentada.</p>
+
+      <!-- Carrusel infinito de logos — se desplaza solo y pausa al pasar el cursor -->
+      <div class="overflow-hidden relative">
+        <!-- Degradados en los bordes para efecto de fundido -->
+        <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-surface-container-lowest to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-surface-container-lowest to-transparent z-10 pointer-events-none"></div>
+
+        <div class="logo-track">
+
+          <!-- ── PRIMERA COPIA ── -->
+          <div class="flex items-center gap-lg px-lg">
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="seal-foam.jpg" alt="Seal &amp; Foam" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="at-mx.jpg" alt="AT-MX" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="denso.jpg" alt="Denso" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="nidec.jpg" alt="Nidec" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="baumann.jpg" alt="Baumann" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="guala-dispensing.jpg" alt="Guala Dispensing" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="vest-de-mexico.jpg" alt="Vest de México" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="borg-warner.jpg" alt="BorgWarner" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="van-vien.jpg" alt="Van Vien" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="kamax.jpg" alt="Kamax" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="tekfor.jpg" alt="Tekfor" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="schaeffler-de-mexico.jpg" alt="Schaeffler de México" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="haldex.jpg" alt="Haldex" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="grupo-modelo.jpg" alt="Grupo Modelo" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="grupo-gondi.jpg" alt="Grupo Gondi" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="continental-automotive.jpg" alt="Continental Automotive" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="centro-investigacion-optica.jpg" alt="Centro de Investigación en Óptica" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="lear-corporation.jpg" alt="Lear Corporation" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="aam-maquiladora.jpg" alt="AAM Maquiladora" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo21.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo22.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo23.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo24.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo25.jpg" alt="Cliente" class="max-h-full max-w-full object-contain"/></div>
+          </div>
+
+          <!-- ── SEGUNDA COPIA (para loop continuo sin salto) ── -->
+          <div class="flex items-center gap-lg px-lg" aria-hidden="true">
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="seal-foam.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="at-mx.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="denso.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="nidec.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="baumann.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="guala-dispensing.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="vest-de-mexico.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="borg-warner.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="van-vien.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="kamax.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="tekfor.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="schaeffler-de-mexico.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="haldex.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="grupo-modelo.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="grupo-gondi.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="continental-automotive.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="centro-investigacion-optica.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="lear-corporation.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="aam-maquiladora.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo21.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo22.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo23.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo24.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+            <div class="flex items-center justify-center w-36 h-16 bg-white border border-outline-variant opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 shrink-0 p-2"><img src="logo25.jpg" alt="" class="max-h-full max-w-full object-contain"/></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Industrias debajo del carrusel -->
+      <div class="flex flex-wrap items-center justify-center gap-sm mt-lg text-body-md text-on-surface-variant">
+        <span class="font-medium">Trabajamos con clientes de</span>
+        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Automotriz</span>
+        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Textil</span>
+        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Empaque</span>
+        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Agroindustria</span>
+        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Alimentos</span>
+        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">Aeroespacial</span>
+        <span class="px-md py-xs bg-primary-fixed border border-primary/20 text-label-bold font-label-bold text-on-primary-fixed">MRO General</span>
+        <span class="text-on-surface-variant">y más.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE SERVICIOS (Services Grid)
+       Cuadrícula con los 6 servicios que ofrece la empresa.
+       El "id='services'" permite que el menú de navegación salte aquí.
+       ============================================================ -->
+  <section class="py-xl bg-background" id="services">
+    <div class="max-w-[1280px] mx-auto px-margin">
+
+      <!-- Encabezado de la sección: título a la izquierda, descripción a la derecha -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-xl">
+        <div class="space-y-sm">
+          <span class="text-label-mono font-label-mono text-primary-container">CAPACIDADES TÉCNICAS</span>
+          <h2 class="text-headline-lg font-headline-lg">Servicios de Manufactura Avanzada</h2>
+        </div>
+        <p class="text-body-md text-on-surface-variant max-w-md">Equipamiento de última generación para proyectos de alta complejidad y tolerancias cerradas.</p>
+      </div>
+
+      <!-- Cuadrícula de servicios: 1 columna en móvil, 2 en tablet, 3 en escritorio -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+        <!-- Servicio 1: CNC Vertical — tarjeta con imagen de fondo -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <!-- "group-hover:opacity-80" = la imagen se aclara un poco al pasar el cursor -->
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Centro de maquinado CNC vertical de 3 y 4 ejes en León, Guanajuato" src="cnc-vertical-leon-guanajuato.jpg"/>
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h3 class="text-headline-md font-headline-md mb-xs">CNC Vertical</h3>
+            <p class="card-text text-on-surface-variant">Centro de maquinado de 3 y 4 ejes.</p>
+          </div>
+        </div>
+
+        <!-- Servicio 2: Torneado -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Torno CNC para piezas cilíndricas y roscados de precisión en León, Guanajuato" src="torneado-cnc-precision-leon-guanajuato.jpg"/>
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h3 class="text-headline-md font-headline-md mb-xs">Torneado CNC</h3>
+            <p class="card-text text-on-surface-variant">Precisión cilíndrica y roscados complejos.</p>
+          </div>
+        </div>
+
+        <!-- Servicio 3: Corte Láser -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Corte láser industrial de metales con acabados de alta precisión en León, Guanajuato" src="corte-laser-industrial-leon-guanajuato.jpg"/>
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h3 class="text-headline-md font-headline-md mb-xs">Corte Láser CNC</h3>
+            <p class="card-text text-on-surface-variant">Formatos de alta precisión y acabados limpios.</p>
+          </div>
+        </div>
+
+        <!-- Servicio 4: Erosionado por Hilo (Wire EDM) -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Erosionado por hilo Wire EDM para cortes geométricos complejos en metales duros" src="erosionado-hilo-wire-edm-leon-guanajuato.png"/>
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h3 class="text-headline-md font-headline-md mb-xs">Corte por Hilo</h3>
+            <p class="card-text text-on-surface-variant">Erosionado por hilo (Wire EDM) para cortes geométricos complejos en metales duros.</p>
+          </div>
+        </div>
+
+        <!-- Servicio 5: Fresado Convencional -->
+        <div class="group relative overflow-hidden bg-surface-container border border-outline-variant aspect-video">
+          <img class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="Fresado convencional para piezas auxiliares e industriales en León, Guanajuato" src="fresado-convencional-leon-guanajuato.png"/>
+          <div class="absolute inset-0 p-lg flex flex-col justify-end bg-gradient-to-t from-background/90 to-transparent">
+            <h3 class="text-headline-md font-headline-md mb-xs">Fresado Convencional</h3>
+            <p class="card-text text-on-surface-variant">Soluciones rápidas para piezas auxiliares.</p>
+          </div>
+        </div>
+
+        <!-- Servicio 6: Tarjeta especial para proyectos personalizados (sin imagen, fondo de color) -->
+        <div class="bg-primary-container border border-primary-container aspect-video overflow-hidden flex flex-col items-center justify-center p-lg text-center gap-sm">
+          <span class="material-symbols-outlined text-on-primary text-4xl" data-icon="settings_suggest">settings_suggest</span>
+          <h4 class="text-headline-md font-headline-md text-on-primary">¿Proyecto Especial?</h4>
+          <p class="text-body-sm text-on-primary/80 mb-md">Contamos con ingeniería para diseño y fabricación a medida.</p>
+          <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest text-primary-container font-label-bold text-label-bold px-md py-xs border border-surface-container-lowest">Consultar</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE PRODUCTOS (Products Showcase / Tooling)
+       Muestra los 4 tipos de herramentales y productos que vende.
+       El "id='tooling'" permite que el menú de navegación salte aquí.
+       ============================================================ -->
+  <section class="py-xl bg-surface-container-lowest" id="tooling">
+    <div class="max-w-[1280px] mx-auto px-margin">
+
+      <!-- Encabezado centrado de la sección -->
+      <div class="text-center mb-xl">
+        <h2 class="text-headline-lg font-headline-lg mb-sm">Especialistas en Herramentales y MRO</h2>
+        <p class="text-body-md text-on-surface-variant max-w-2xl mx-auto">Suministramos componentes críticos para mantener tu operación al 100%.</p>
+      </div>
+
+      <!-- Cuadrícula de 4 productos: 2 columnas en móvil, 4 en escritorio -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+
+        <!-- Producto 1: Fixtures & Jigs -->
+        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
+          <!-- Cuadro cuadrado para la imagen del producto -->
+          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
+            <img class="max-w-full h-auto object-contain" alt="Fixtures y jigs de precisión fabricados a medida para líneas de producción industriales" src="fixtures-jigs-herramentales-leon-guanajuato.png"/>
+          </div>
+          <!-- Nombre y categoría del producto debajo de la imagen -->
+          <div class="p-md bg-surface-container-low">
+            <span class="text-label-mono text-primary-container">PRODUCTO</span>
+            <h5 class="text-body-md font-label-bold">Fixtures &amp; Jigs</h5>
+          </div>
+        </div>
+
+        <!-- Producto 2: Gages & Calibradores -->
+        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
+          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
+            <img class="max-w-full h-auto object-contain" alt="Gages y calibradores de medición industrial para control de calidad dimensional" src="gages-calibradores-metrologia-industrial.png"/>
+          </div>
+          <div class="p-md bg-surface-container-low">
+            <span class="text-label-mono text-primary-container">PRECISIÓN</span>
+            <h5 class="text-body-md font-label-bold">Gages &amp; Calibradores</h5>
+          </div>
+        </div>
+
+        <!-- Producto 3: Refacciones Industriales (MRO) -->
+        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
+          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
+            <img class="max-w-full h-auto object-contain" alt="Refacciones industriales MRO para mantenimiento y reparación de maquinaria en el Bajío" src="refacciones-industriales-mro-bajio.png"/>
+          </div>
+          <div class="p-md bg-surface-container-low">
+            <span class="text-label-mono text-primary-container">MRO</span>
+            <h5 class="text-body-md font-label-bold">Refacciones Industriales</h5>
+          </div>
+        </div>
+
+        <!-- Producto 4: Herramentales personalizados -->
+        <div class="group border border-outline-variant bg-surface-container-low overflow-hidden">
+          <div class="aspect-square bg-surface-container p-lg flex items-center justify-center">
+            <img class="max-w-full h-auto object-contain" alt="Herramentales industriales personalizados fabricados con maquinado CNC en Longoria Tooling" src="herramentales-personalizados-cnc-leon-guanajuato.png"/>
+          </div>
+          <div class="p-md bg-surface-container-low">
+            <span class="text-label-mono text-primary-container">CUSTOM</span>
+            <h5 class="text-body-md font-label-bold">Herramentales</h5>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE CALIDAD (Quality / Metrology)
+       Muestra la certificación ISO y el laboratorio de metrología.
+       Tiene fondo con patrón de puntos (bg-grid-pattern).
+       El "id='quality'" permite que el menú de navegación salte aquí.
+       ============================================================ -->
+  <section class="py-xl border-y border-outline-variant bg-grid-pattern" id="quality">
+    <div class="max-w-[1280px] mx-auto px-margin grid lg:grid-cols-2 gap-xl items-center">
+
+      <!-- Columna izquierda: texto y lista de características de calidad -->
+      <div class="space-y-lg">
+        <h2 class="text-headline-lg font-headline-lg">Cultura de Calidad ISO 9001:2015</h2>
+        <p class="text-body-lg text-on-surface-variant">Con más de 25 años en el mercado, nuestra garantía no es solo una palabra, es un proceso documentado. Cada pieza pasa por nuestro laboratorio de Metrología.</p>
+
+        <!-- Lista de tres puntos de calidad, cada uno con ícono, título y descripción -->
+        <ul class="space-y-md">
+
+          <!-- Punto 1: Reportes dimensionales -->
+          <li class="flex items-start gap-md">
+            <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="check_circle">check_circle</span>
+            <div>
+              <h6 class="font-bold">Reportes Dimensionales</h6>
+              <p class="card-text text-on-surface-variant">Documentación técnica incluida en cada entrega crítica.</p>
+            </div>
+          </li>
+
+          <!-- Punto 2: Laboratorio de Metrología -->
+          <li class="flex items-start gap-md">
+            <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="architecture">architecture</span>
+            <div>
+              <h6 class="font-bold">Laboratorio de Metrología</h6>
+              <p class="card-text text-on-surface-variant">CMM y equipos de medición certificados.</p>
+            </div>
+          </li>
+
+          <!-- Punto 3: Gestión de cumplimiento -->
+          <li class="flex items-start gap-md">
+            <span class="material-symbols-outlined text-primary-container shrink-0" data-icon="factory">factory</span>
+            <div>
+              <h6 class="font-bold">Gestión de Cumplimiento</h6>
+              <p class="card-text text-on-surface-variant">Alineados a los estándares de la industria automotriz y aeroespacial del Bajío.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Columna derecha: imagen del laboratorio con borde decorativo -->
+      <div class="relative">
+        <!-- Borde decorativo detrás de la imagen -->
+        <div class="absolute -inset-4 bg-primary-container/5 border border-primary-container/10"></div>
+        <!-- Imagen del laboratorio de metrología -->
+        <img class="relative z-10 w-full border border-outline-variant shadow-xl" alt="Laboratorio de metrología con equipo CMM certificado en Longoria Tooling, León Guanajuato" src="laboratorio-metrologia-longoria-tooling.jpg"/>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE CONTACTO — WhatsApp directo
+       ============================================================ -->
+  <section class="py-xl bg-background overflow-hidden">
+    <div class="max-w-[800px] mx-auto px-margin">
+
+      <div class="bg-primary-container p-xl border border-primary/20 space-y-lg rounded text-center">
+        <h2 class="text-headline-lg font-headline-lg text-on-primary">¿Tienes una urgencia?</h2>
+        <p class="text-body-lg text-on-primary/80 max-w-lg mx-auto">Escríbenos directo por WhatsApp. Nuestro equipo de ingeniería responde en menos de 24 horas hábiles y está listo para analizar tus planos.</p>
+
+        <!-- Botón principal de WhatsApp -->
+        <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-md bg-[#25D366] text-white font-bold text-lg px-xl py-md rounded active:scale-95 transition-transform duration-150 shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 shrink-0">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          Cotizar por WhatsApp
+        </a>
+
+        <!-- Datos de contacto secundarios -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-lg pt-md text-on-primary/80 text-body-sm">
+          <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-base" data-icon="call">call</span>
+            <a href="tel:+524772172542" class="hover:text-on-primary transition-colors">477 217 2542</a>
+          </div>
+          <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-base" data-icon="mail">mail</span>
+            <a href="mailto:ventas@longoriatm.com.mx" class="hover:text-on-primary transition-colors">ventas@longoriatm.com.mx</a>
+          </div>
+          <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+            <span>León, Guanajuato, México</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN DE COBERTURA GEOGRÁFICA (Local Context / Map Area)
+       Muestra la ubicación estratégica de León y los tiempos
+       de entrega a otras ciudades del Bajío.
+       ============================================================ -->
+  <section class="bg-surface-container-low py-xl">
+    <div class="max-w-[1280px] mx-auto px-margin flex flex-col md:flex-row items-center gap-xl">
+
+      <!-- Columna izquierda: texto con distancias a ciudades clave -->
+      <div class="flex-1 space-y-md">
+        <h2 class="text-headline-lg font-headline-lg">Cobertura Industrial en todo el Bajío</h2>
+        <p class="text-body-md text-on-surface-variant">Desde nuestra planta en <strong>León, Guanajuato</strong>, atendemos urgencias de maquinado CNC y corte láser para los principales parques industriales de la región:</p>
+
+        <ul class="space-y-sm text-body-sm text-on-surface-variant">
+          <li><strong class="text-on-surface">Silao — Puerto Interior:</strong> Servicio de maquinado de precisión a 20 minutos para plantas automotrices y de autopartes.</li>
+          <li><strong class="text-on-surface">Irapuato — Parque Industrial Castro del Río:</strong> Refacciones y herramentales entregados en menos de 45 minutos.</li>
+          <li><strong class="text-on-surface">Salamanca — Zona Industrial:</strong> Soporte a plantas petroquímicas y de manufactura general.</li>
+          <li><strong class="text-on-surface">Celaya y Querétaro:</strong> Entregas programadas con tiempos de respuesta competitivos para el corredor industrial.</li>
+        </ul>
+
+        <div class="flex flex-wrap gap-md pt-sm">
+          <span class="px-md py-1 border border-outline-variant text-label-mono text-primary-container">SILAO: 20 MIN</span>
+          <span class="px-md py-1 border border-outline-variant text-label-mono text-primary-container">IRAPUATO: 45 MIN</span>
+          <span class="px-md py-1 border border-outline-variant text-label-mono text-primary-container">QUERÉTARO: 1.5 HR</span>
+        </div>
+      </div>
+
+      <!-- Columna derecha: imagen del mapa regional -->
+      <div class="w-full md:w-1/2 aspect-video bg-surface-container border border-outline-variant overflow-hidden rounded">
+        <img class="w-full h-full object-cover" alt="Mapa de cobertura de maquinado CNC en el Bajío: León, Silao, Irapuato, Salamanca, Celaya, Querétaro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_UxdhAK93216eAZVxaIpL9CwvF1JvyaArh0twXvzPEkqZ3WGAOZv7WyVZo9eprHW1216VtxDd2ygbms-NEWhkJ3EqHqUxDlB8nxLa8vuuTFeZOal1-Zc495kWXV8ZvCD84YeFezIHoBXDTFRz_dbqz-oU_RNYKM9rqqto7xedk05cJ-Fw7W5kCyx5i1WKOmQMwNyb5RczQhuzuZJplEUXzvJO37HvSZDXcYiXXNsL0zgAs8wOlggXI5cupGbRMArVKef9Jlrmx1BQ"/>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     PIE DE PÁGINA (Footer)
+     Sección final con información de la empresa, navegación
+     secundaria, datos de contacto y derechos de autor.
+     ============================================================ -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-xl px-margin py-xl w-full max-w-[1280px] mx-auto">
+
+    <!-- Columna 1: marca y descripción -->
+    <div class="space-y-lg">
+      <div class="text-headline-md font-bold text-primary">LONGORIA TOOLING</div>
+      <p class="text-body-sm text-on-surface-variant max-w-sm">Maquinados CNC y corte láser industrial con precisión garantizada para la industria manufacturera del Bajío.</p>
+      <div class="text-label-mono text-primary uppercase font-bold">ISO 9001:2015</div>
+    </div>
+
+    <!-- Columna 2: navegación -->
+    <div class="space-y-md">
+      <h6 class="text-label-bold font-label-bold text-on-surface">NAVEGACIÓN</h6>
+      <ul class="space-y-sm">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#services">Servicios</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#tooling">Especialidades</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="#quality">Calidad</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: contacto -->
+    <div class="space-y-md">
+      <h6 class="text-label-bold font-label-bold text-on-surface">CONTACTO</h6>
+      <ul class="space-y-sm">
+        <li class="text-on-surface-variant text-body-sm">León, Guanajuato, México</li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="tel:+524772172542">477 217 2542</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-body-sm" href="mailto:ventas@longoriatm.com.mx">ventas@longoriatm.com.mx</a></li>
+        <li>
+          <a href="https://wa.me/524772172542?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-xs text-[#25D366] font-bold text-body-sm hover:opacity-80 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Barra de derechos de autor -->
+  <div class="max-w-[1280px] mx-auto px-margin py-md border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between gap-sm">
+    <p class="text-label-mono text-on-surface-variant/60">© 2025 LONGORIA TOOLING. TODOS LOS DERECHOS RESERVADOS.</p>
+    <p class="text-label-mono text-on-surface-variant/60">LEÓN, GUANAJUATO</p>
+  </div>
+</footer>
+
+</body></html>

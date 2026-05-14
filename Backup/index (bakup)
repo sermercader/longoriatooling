@@ -1,0 +1,154 @@
+<?php $n = 1; ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Tresmedia Digital">
+
+    <!--favicon icon-->
+    <link rel="icon" type="image/png" href="maquinado/assets/img/favicon.png">
+
+    <title>LONGORIA AND CO. | TOOLING MACHINING</title>
+
+    <!--common style-->
+    <link href='http://fonts.googleapis.com/css?family=Abel|Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic,900,900italic,200italic,200' rel='stylesheet' type='text/css'>
+    
+    <!--<link rel="preconnect" href="https://fonts.gstatic.com">-->
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!--<link rel="preconnect" href="https://fonts.gstatic.com">-->
+	<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="maquinado/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="maquinado/assets/vendor/animate/animate.css">
+    <link rel="stylesheet" href="maquinado/assets/vendor/elasic-slider/elastic.css">
+    <link rel="stylesheet" href="maquinado/assets/vendor/iconmoon/linea-icon.css">
+    <link rel="stylesheet" href="maquinado/assets/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="maquinado/assets/vendor/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="maquinado/assets/vendor/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="maquinado/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="maquinado/assets/css/shortcodes.css">
+    <link rel="stylesheet" href="maquinado/assets/css/style.css">
+    <link rel="stylesheet" href="maquinado/assets/css/default-theme.css">
+    <!-- endinject -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/vendor/backward/html5shiv.js"></script>
+    <script src="assets/vendor/backward/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="wrapper">
+		
+        <!--top bar-->
+        <!--<div class="top-bar gray-bg- visible-md visible-lg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="top-social-link">
+                            <a href="#">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <ul class="top-link">
+                            <li><i class="fa fa-phone"></i> (477) 763 03 47</li>
+                            <li><i class="fa fa-envelope-o"></i> ventas@longoriatm.com.mx </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--top bar-->
+        
+        
+        <!--hero section-->
+        <!--<div class="banner-state text-center vertical-align height-600">
+            <div class="container-mid">
+                <div class="container">
+                    <div class="banner-box light-box">
+                        <h1 class="text-uppercase"> Massive Studio</h1>
+                        <h3 class="text-uppercase">We Love to design the impossible</h3>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--hero section-->
+
+        <!--body content start-->
+        <section class="body-content" style="background-color:#000;">
+            
+            <div class="page-content" style="background-image:url(maquinado/assets/img/bg-index.jpg); padding:40px 0;">
+                <div class="container">
+                    <div class="row">                        
+                        <div class="col-md-12" align="center">
+                            <img class="img-responsive" src="maquinado/assets/img/logo-tooling.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="page-content" style="padding:0; background-color:#000;">
+                <div class="container-fluid">
+                    <div class="row">                        
+                        <div class="col-md-6 parallax-8" align="center" style="padding:18% 0; background-repeat:no-repeat;">
+                            <!--<img class="img-responsive" src="maquinado/assets/img/bg-maquinado.jpg" alt="">-->
+                            <h1 class="txt-extra-xl light-txt">MAQUINADO</h1>
+                        	<a href="maquinado/index.php" class="btn btn-medium btn-light-border   btn-transparent "> ENTRAR</a>
+                        </div>
+                        <div class="col-md-6 parallax-9" align="center" style="padding:15% 0; background-repeat:no-repeat;">
+                            <h1 class="txt-extra-xl-2 light-txt">AUTOMATIZACIÓN <br> E INTEGRACIÓN <br>DE PROCESOS</h1>
+                        	<a href="#" class="btn btn-medium btn-light-border   btn-transparent "> PRÓXIMAMENTE</a>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <!--body content end-->
+
+    </div>
+
+
+    <!-- inject:js -->
+    <script src="maquinado/assets/vendor/modernizr/modernizr.js"></script>
+    <script src="maquinado/assets/vendor/jquery/jquery-1.10.2.min.js"></script>
+    <script src="maquinado/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="maquinado/assets/vendor/bootstrap-validator/validator.min.js"></script>
+    <script src="maquinado/assets/vendor/breakpoint/breakpoint.js"></script>
+    <script src="maquinado/assets/vendor/count-to/jquery.countTo.js"></script>
+    <script src="maquinado/assets/vendor/countdown/jquery.countdown.js"></script>
+    <script src="maquinado/assets/vendor/easing/jquery.easing.1.3.js"></script>
+    <script src="maquinado/assets/vendor/easy-pie-chart/jquery.easypiechart.min.js"></script>
+    <script src="maquinado/assets/vendor/elasic-slider/jquery.eislideshow.js"></script>
+    <script src="maquinado/assets/vendor/flex-slider/jquery.flexslider-min.js"></script>
+    <script src="maquinado/assets/vendor/gmap/jquery.gmap.min.js"></script>
+    <script src="maquinado/assets/vendor/images-loaded/imagesloaded.js"></script>
+    <script src="maquinado/assets/vendor/isotope/jquery.isotope.js"></script>
+    <script src="maquinado/assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="maquinado/assets/vendor/mailchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="maquinado/assets/vendor/menuzord/menuzord.js"></script>
+    <script src="maquinado/assets/vendor/nav/jquery.nav.js"></script>
+    <script src="maquinado/assets/vendor/owl-carousel/owl.carousel.min.js"></script>
+    <script src="maquinado/assets/vendor/parallax-js/parallax.min.js"></script>
+    <script src="maquinado/assets/vendor/smooth/smooth.js"></script>
+    <script src="maquinado/assets/vendor/sticky/jquery.sticky.min.js"></script>
+    <script src="maquinado/assets/vendor/touchspin/touchspin.js"></script>
+    <script src="maquinado/assets/vendor/typist/typist.js"></script>
+    <script src="maquinado/assets/vendor/visible/visible.js"></script>
+    <script src="maquinado/assets/vendor/wow/wow.min.js"></script>
+    <script src="maquinado/assets/js/scripts.js"></script>
+    <!-- endinject --> 
+</body>
+
+</html>
